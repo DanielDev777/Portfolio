@@ -1,12 +1,11 @@
-import { Component, inject } from '@angular/core';
-import { SnippetsService } from '../../services/snippets-service';
+import { Component } from '@angular/core';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
 	selector: 'app-hero',
-	imports: [],
+	imports: [TranslatePipe],
 	templateUrl: './hero.html',
 	styleUrl: './hero.scss'
 })
 export class Hero {
-	snippets = inject(SnippetsService);
 }

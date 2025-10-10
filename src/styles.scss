@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+@use './vars.scss';
+@use './mixins.scss';
+
+// General //
+body {
+	margin: 0;
+}
+// General //

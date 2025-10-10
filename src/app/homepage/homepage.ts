@@ -1,5 +1,4 @@
 import { Component, inject } from '@angular/core';
-import { SnippetsService } from '../services/snippets-service';
 import { Hero } from './hero/hero';
 
 @Component({
@@ -9,6 +8,5 @@ import { Hero } from './hero/hero';
   styleUrl: './homepage.scss',
 })
 export class Homepage {
-	snippets = inject(SnippetsService);
 	
 }
