@@ -1,0 +1,7 @@
+@use '../../../vars.scss';
+
+section {
+	background-image: var(--hero);
+	padding: 160px 0 80px;
+	height: 100vh;
+}
