@@ -1,3 +1,5 @@
+@use '../../../../mixins.scss';
+
 .header {
 	position: absolute;
 	top: 0;
@@ -22,6 +24,55 @@
 		> * {
 			color: #fff;
 			text-decoration: none;
+			position: relative;
 		}
+	}
+}
+.hover-icon- {
+	&circle,
+	&line,
+	&wave,
+	&swoosh {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center;
+	}
+	&circle {
+		background-image: url('../../../../../public/img/icons/hover-deco/circle.svg');
+		width: 130%;
+		height: 200%;
+		top: -11px;
+    	left: -12px;
+		@include mixins.headerHover(50%, 100%, 0deg, 50%, 0%);
+	}
+	&line {
+		background-image: url('../../../../../public/img/icons/hover-deco/short_line.svg');
+		bottom: -10px;
+		top: unset;
+		width: 150%;
+		height: 200%;
+		left: -10px;
+		@include mixins.headerHover(100%, 100%, 270deg, 0%, 0%);
+	}
+	&wave {
+		background-image: url('../../../../../public/img/icons/hover-deco/wave.svg');
+		left: -20px;
+		width: 150%;
+		height: 200%;
+		transform: translateY(-25%);
+		@include mixins.headerHover(100%, 100%, 270deg, 0%, 0%);
+	}
+	&swoosh {
+		background-image: url('../../../../../public/img/icons/hover-deco/swoosh.svg');
+		width: 120%;
+		height: 200%;
+		left: -5px;
+	    top: -10px;
+		@include mixins.headerHover(100%, 100%, 270deg, 0%, 0%);
 	}
 }

@@ -1,3 +1,5 @@
+@use '../mixins.scss';
+
 .lang-toggle {
 	display: flex;
 	align-items: center;
@@ -23,28 +25,21 @@
 			background-size: contain;
 			background-position: center;
 			opacity: 0;
-			transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 			mask-size: 200% 200%;
 		}
 		.hover-icon-en {
-			mask-image: linear-gradient(135deg, transparent 0%, transparent 50%, white 50%, white 100%);
 			background-image: url('/img/icons/hover-deco/border_bottom_right.svg');
-			mask-position: 0% 0%;
 		}
 		.hover-icon-de {
 			background-image: url('/img/icons/hover-deco/border_upper_left.svg');
-			mask-image: linear-gradient(-45deg, transparent 0%, transparent 50%, white 50%, white 100%);
-			mask-position: 100% 100%;
 		}
 		
-		&:not(.active):hover {
+		&:not(.active) {
 			.hover-icon-en {
-				opacity: 1;
-				mask-position: 100% 100%;
+				@include mixins.headerHover(0%, 0%, 135deg, 100%, 100%);
 			}
 			.hover-icon-de {
-				opacity: 1;
-				mask-position: 0% 0%;
+				@include mixins.headerHover(100%, 100%, -45deg, 0%, 0%);
 			}
 		}
 	}

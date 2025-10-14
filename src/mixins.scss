@@ -1,0 +1,11 @@
+@mixin headerHover($ogx, $ogy, $deg, $endx, $endy) {
+	mask-position: $ogx $ogy;
+	opacity: 0;
+	mask-size: 200% 200%;
+	transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	mask-image: linear-gradient($deg, transparent 0%, transparent 50%, white 50%, white 100%);
+	&:hover {
+		mask-position: $endx $endy;
+		opacity: 1;
+	}
+}
