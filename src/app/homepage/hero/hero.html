@@ -1,9 +1,45 @@
 <section>
 	<div class="container">
 		<div class="hero">
-			<button>{{ 'home.title' |translate}}</button>
-			<h1>Frontend DEVELOPER</h1>
-			<button>Get in Touch</button>
+			<button [class.de-hello]="translate.getCurrentLang() === 'de'" 
+			class="main-btn roll-animate border-white hover--secondary hero-hello-btn">
+				<img class="roll-icon" src="/img/icons/waving_hand.svg">
+				<span class="hero-hello">{{ 'hero.hello' | translate }}</span>
+				<span class="hero-hello-hover">{{ 'hero.name' | translate }}</span>
+			</button>
+			<div class="hero-polaroid">
+				<img src="img/portrait.JPG">
+				<span>{{ 'hero.polaroid' | translate }}</span>
+			</div>
+			<h1 class="white">
+				<div class="hero-frontend">
+					@for (char of getCharacters(); track $index) { 
+						@if ($index < 8) {
+							@if ($first) {
+								<span class="hero-uppercase">{{ char }}</span>
+							} @else {
+								<span class="hero-lowercase">{{ char }}</span>
+							}
+						} 
+					}
+				</div>
+				<div class="hero-backend">
+					@for (char of getCharacters(); track $index) { @if ($index > 8)
+					{
+					<span class="hero-uppercase">{{ char }}</span>
+					} }
+				</div>
+			</h1>
+			<button class="main-btn roll-animate border-white hover--secondary contact-btn">
+				<a href="#contact">
+					{{ 'general.contact' | translate }}
+				</a>
+			</button>
 		</div>
+	</div>
+	<div class="socials">
+		<a target="_blank" href="https://de.linkedin.com/in/kersten-daniel"><img src="img/icons/socials/linked-in.svg" alt="LinkedIn Icon"></a>
+		<a target="_blank" href="https://github.com/DanielDev777"><img src="img/icons/socials/github.svg" alt="Github Icon"></a>
+		<a target="_blank" href="mailto:daniel@dev-kersten.de"><img src="img/icons/socials/mail.svg" alt="Mail Icon"></a>
 	</div>
 </section>

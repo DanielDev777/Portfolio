@@ -11,7 +11,7 @@ import { SvgIconComponent } from "./shared/components/svg-icon/svg-icon.componen
 
 @Component({
 	selector: 'app-root',
-	imports: [RouterOutlet, Footer, Header, SvgIconComponent],
+	imports: [RouterOutlet, Footer, Header],
 	templateUrl: './app.html',
 	styleUrl: './app.scss'
 })
@@ -20,14 +20,15 @@ export class App {
 
 	private translate = inject(TranslateService);
 
-	selectedLang: string;
+	selectedLang = signal('en');
 
 	constructor() {
-		this.selectedLang = 'de';
+		this.translate.setFallbackLang('en');
+        this.translate.use('en');
 	}
 
 	useLanguage(language: string): void {
 		this.translate.use(language);
-		this.selectedLang = language;
+		this.selectedLang.set(language);
 	}
 }

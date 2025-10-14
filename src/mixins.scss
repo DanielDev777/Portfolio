@@ -1,3 +1,4 @@
+// Animations
 @mixin headerHover($ogx, $ogy, $deg, $endx, $endy) {
 	mask-position: $ogx $ogy;
 	opacity: 0;
@@ -9,3 +10,81 @@
 		opacity: 1;
 	}
 }
+@mixin heroLetterChange($ogcase, $endcase) {
+	text-transform: $ogcase;
+	&:hover {
+		text-transform: $endcase;
+		color: var(--highlight-primary);
+	}
+}
+@mixin heroHelloText($ogx, $ogy, $deg, $endx, $endy) {
+	span:last-of-type {
+		mask-position: $ogx $ogy;
+		opacity: 0;
+		mask-size: 200% 200%;
+		transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+		mask-image: linear-gradient($deg, transparent 0%, transparent 50%, white 50%, white 100%);
+	}
+	&:hover {
+		span:last-of-type {
+			mask-position: $endx $endy;
+			opacity: 1;
+		}
+	}
+}
+// Animations //
+
+// Border //
+@mixin buttonBorder($bcolor, $color) {
+	border: 1px solid $bcolor;
+	color: $color;
+	a {
+		color: $color;
+		text-decoration: none;
+	}
+}
+// Border //
+
+// Box shadow //
+@mixin boxShadowButton($color) {
+	box-shadow: 4px 4px $color;
+	&:hover {
+		box-shadow: unset;
+		transform: translate(4px, 4px);
+	}
+} 
+// Box shadow //
+
+// Flex //
+@mixin flexBox($fd: row, $jc: center, $ai: center) {
+	display: flex;
+	flex-direction: $fd;
+	justify-content: $jc;
+	align-items: $ai;
+}
+// Flex //
+
+// Keyframes //
+@keyframes rolling {
+	0% {
+		transform: rotate(-180deg);
+	}
+	70% {
+		transform: rotate(30deg);
+	}
+	90% {
+		transform: rotate(-15deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
+}
+@keyframes rolling-back {
+    0% {
+        transform: translateX(0px) rotate(360deg);
+    }
+    100% {
+        transform: translateX(-20px) rotate(0deg);
+    }
+}
+// Keyframes //

@@ -1,7 +1,113 @@
 @use '../../../vars.scss';
+@use '../../../mixins.scss';
 
 section {
 	background-image: var(--hero);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
 	padding: 160px 0 80px;
 	height: 100vh;
+	.hero {
+		height: 100%;
+		max-width: 900px;
+		margin: 0 auto;
+		position: relative;
+		@include mixins.flexBox($fd:column, $jc: center, $ai: unset);
+		&-polaroid {
+			background-color: #fff;
+			padding: 16px;
+			position: absolute;
+			top: 10%;
+			right: 5%;
+			width: fit-content;
+			transform: rotate(10deg);
+			@include mixins.flexBox($fd:column, $jc: center, $ai: center);
+			&:hover {
+				img {
+					filter: grayscale(0);
+				}
+			}
+			img {
+				width: 150px;
+				height: 150px;
+				filter: grayscale(1);
+				margin-bottom: 20px;
+				transition: all .3s ease;
+			}
+			span {
+				font-family: 'Kalam', sans-serif;
+				line-height: 1;
+			}
+		}
+		&-frontend,
+		&-backend {
+			width: fit-content;
+			font-size: inherit;
+			span {
+				font-size: inherit;
+			}
+		}
+		&-frontend {
+			align-self: flex-start;
+		}
+		&-backend {
+			align-self: flex-end;
+		}
+		&-lowercase {
+			@include mixins.heroLetterChange(lowercase, uppercase);
+		}
+		&-uppercase {
+			@include mixins.heroLetterChange(uppercase, lowercase);
+		}
+		&-hello {
+			opacity: 1;
+			&-btn {
+				transition: all .5s ease;
+				width: 135px;
+				height: 50px;
+				white-space: nowrap;
+				@include mixins.heroHelloText(100%, 100%, 270deg, 0%, 0%);
+				&:hover {
+					width: 190px;
+					&.de-hello {
+						width: 230px;
+					}
+					span:first-of-type {
+						opacity: 0;
+						display: none;
+					}
+					span:last-of-type {
+						opacity: 1;
+					}
+				}
+			}
+			&-hover {
+				position: absolute;
+				top: 50%;
+				left: 20px;
+				opacity: 0;
+				transform: translateY(-50%);
+				display: inline;
+			}
+		}
+		.contact-btn {
+			align-self: flex-end;
+			@include mixins.boxShadowButton(#fff);
+		}
+	}
+	.container {
+		height: 100%;
+		position: relative;
+		.socials {
+			@include mixins.flexBox($fd:column, $jc: center, $ai: center);
+			position: absolute;
+			bottom: 0;
+			left: 0;
+		}
+	}
+	h1 {
+		display: flex;
+		flex-direction: column;
+	}
 }

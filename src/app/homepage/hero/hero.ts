@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { TranslatePipe } from '@ngx-translate/core';
+import { ChangeDetectionStrategy, Component, computed, inject, OnInit, signal } from '@angular/core';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 
 @Component({
 	selector: 'app-hero',
@@ -8,4 +8,11 @@ import { TranslatePipe } from '@ngx-translate/core';
 	styleUrl: './hero.scss'
 })
 export class Hero {
+	translate = inject(TranslateService);
+	
+	getCharacters() {
+		let title = "Frontend Developer";
+		return title.split('');
+	}
+
 }

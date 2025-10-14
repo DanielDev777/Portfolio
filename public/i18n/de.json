@@ -1,5 +1,10 @@
 {
-	"home": {
-		"title": "Hallo Welt"
+	"general": {
+		"contact": "Kontakt aufnehmen"
+	},
+	"hero": {
+		"hello": "Hallo Welt",
+		"name": "Ich bin Daniel Kersten",
+		"polaroid": "Daniel :)"
 	}
 }
