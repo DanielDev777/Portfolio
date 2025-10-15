@@ -1,0 +1,42 @@
+@use '../../../vars.scss';
+@use '../../../mixins.scss';
+
+.about {
+	.container {
+		@include mixins.flexBox($jc: space-between);
+		> * {
+			flex: 0 0 45%;
+			max-width: 45%;
+		}
+	}
+	&-banners {
+		@include mixins.flexBox($fd: column, $jc: center, $ai: center);
+	}
+}
+
+.banner {
+	@include mixins.backgroundImageProperties($bs:contain);
+	width: 100%;
+	position: relative;
+	> img {
+		width: 100%;
+	}
+	&-inner {
+		position: absolute;
+		left: 50%;
+		@include mixins.flexBox($jc: center, $ai: center, $g: 10px);
+		transform: translate(-50%, -50%);
+		p {
+			font-size: 1.3rem;
+		}
+	}
+	&.location {
+		@include mixins.rippedPaper(35%, -5deg, 2, 40%);
+	}
+	&.relocation {
+		@include mixins.rippedPaper($ty: 0, $deg: 0, $z: 1, $top: 50%);
+	}
+	&.remote {
+		@include mixins.rippedPaper(-30%, 5deg, 0, 45%);
+	}
+}

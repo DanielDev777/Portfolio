@@ -22,9 +22,24 @@ body {
 	margin: 0 auto;
 	padding: 0 20px;
 }
+section {
+	padding: 8rem 0;
+}
 h1 {
 	font-size: 7rem;
 	margin: 20px 0;
+	@media(max-width: 991px) {
+		font-size: 6rem;
+	}
+	@media(max-width: 767px) {
+		font-size: 5rem;
+	}
+	@media(max-width: 575px) {
+		font-size: 14vw;
+	}
+}
+p {
+	margin: 0;
 }
 // General //
 

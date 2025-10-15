@@ -2,9 +2,28 @@
 	"general": {
 		"contact": "Kontakt aufnehmen"
 	},
+	"header": {
+		"about-me": "Über mich",
+		"skills": "Skills",
+		"projects": "Projekte",
+		"contact": "Kontakt"
+	},
 	"hero": {
 		"hello": "Hallo Welt",
 		"name": "Ich bin Daniel Kersten",
-		"polaroid": "Daniel :)"
+		"polaroid": {
+			"name": "Daniel ",
+			"smiley": ":)",
+			"hover": ":D"
+		}
+	},
+	"about": {
+		"who": "Who's Daniel?",
+		"about-me": "About me",
+		"info": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem blanditiis facilis reiciendis exercitationem veniam quasi quia eum repudiandae, illum repellat eligendi voluptate repellendus id vero laboriosam, nemo accusamus nisi optio.",
+		"contact": "Let's talk",
+		"based": "Based in Hamburg",
+		"relocation": "Open to relocate",
+		"remote": "Open to work remote"
 	}
 }

@@ -1,0 +1,73 @@
+@use '../../../mixins.scss';
+
+.lang-toggle {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	.lang-btn {
+		background: none;
+		border: none;
+		color: #fff;
+		cursor: pointer;
+		transition: color 0.3s;
+		position: relative;
+		&.active {
+			color: var(--highlight-tertiary);
+		}
+		.hover-icon-en,
+		.hover-icon-de {
+			position: absolute;
+			top: -7px;
+			left: -3px;
+			width: 40px;
+			height: 40px;
+			background-repeat: no-repeat;
+			background-size: contain;
+			background-position: center;
+			opacity: 0;
+			mask-size: 200% 200%;
+		}
+		.hover-icon-en {
+			background-image: url('/img/icons/hover-deco/border_bottom_right.PNG');
+		}
+		.hover-icon-de {
+			background-image: url('/img/icons/hover-deco/border_upper_left.PNG');
+		}
+		
+		&:not(.active) {
+			.hover-icon-en {
+				@include mixins.hoverDisplay(0%, 0%, 135deg, 100%, 100%);
+			}
+			.hover-icon-de {
+				@include mixins.hoverDisplay(100%, 100%, -45deg, 0%, 0%);
+			}
+		}
+	}
+	.toggle {
+		position: relative;
+		width: 45px;
+		height: 20px;
+		background: var(--highlight-tertiary);
+		border-radius: 34px;
+		transition: background 0.3s;
+		height: 10px;
+		border: 2px solid #fff;
+		.knob {
+			position: absolute;
+			top: 50%;
+			left: -3px;
+			width: 16px;
+			height: 16px;
+			background: var(--highlight-secondary);
+			border: 2px solid #fff;
+			border-radius: 50%;
+			transition: transform 0.3s ease;
+			transform: translateY(-50%);
+		}
+		&.de {
+			.knob {
+				transform: translateY(-50%) translateX(30px);
+			}
+		}
+	}
+}

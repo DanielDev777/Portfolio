@@ -23,10 +23,24 @@ section {
 			width: fit-content;
 			transform: rotate(10deg);
 			@include mixins.flexBox($fd:column, $jc: center, $ai: center);
+			@media (max-width: 767px) {
+				top: 5%;
+			}
+			@media (max-width: 575px) {
+				position: unset;
+				align-self: center;
+				margin-top: 20px;
+			}
 			&:hover {
 				img {
 					filter: grayscale(0);
 				}
+				.smiley {
+					display: none;
+					&-hover {
+						display: inline;
+					}
+				} 
 			}
 			img {
 				width: 150px;
@@ -38,6 +52,11 @@ section {
 			span {
 				font-family: 'Kalam', sans-serif;
 				line-height: 1;
+			}
+			.smiley {
+				&-hover {
+					display: none;
+				}
 			}
 		}
 		&-frontend,
@@ -53,6 +72,9 @@ section {
 		}
 		&-backend {
 			align-self: flex-end;
+			@media (max-width: 575px) {
+				align-self: flex-start;
+			}
 		}
 		&-lowercase {
 			@include mixins.heroLetterChange(lowercase, uppercase);
@@ -67,7 +89,7 @@ section {
 				width: 135px;
 				height: 50px;
 				white-space: nowrap;
-				@include mixins.heroHelloText(100%, 100%, 270deg, 0%, 0%);
+				@include mixins.hoverDisplayWithChild(100%, 100%, 270deg, 0%, 0%, $type: 'hello-btn');
 				&:hover {
 					width: 190px;
 					&.de-hello {
@@ -100,10 +122,20 @@ section {
 		height: 100%;
 		position: relative;
 		.socials {
-			@include mixins.flexBox($fd:column, $jc: center, $ai: center);
+			@include mixins.flexBox($fd:column, $jc: center, $ai: center, $g: 10px);
 			position: absolute;
 			bottom: 0;
 			left: 0;
+			@media (max-width: 1400px) {
+				margin-left: 20px;
+			}
+			@media (max-width: 767px) {
+				display: none;
+			}
+			a {
+				@include mixins.flexBox($jc: center, $ai: center);
+				@include mixins.socials();
+			}
 		}
 	}
 	h1 {

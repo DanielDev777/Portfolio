@@ -11,6 +11,9 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		// @media (max-width: 767px) {
+		// 	display: none;
+		// }
 	}
 	&-logo {
 		height: 50px;
@@ -21,10 +24,64 @@
 		align-items: center;
 		justify-content: space-evenly;
 		width: 100%;
+		@media (max-width: 767px) {
+			display: none;
+		}
 		> * {
 			color: #fff;
 			text-decoration: none;
 			position: relative;
+		}
+	}
+	.desktop-lang {
+		@media (max-width: 767px) {
+			display: none;
+		}
+	}
+	.mobile-menu,
+	.mobile-btn {
+		@media (min-width: 768px) {
+			display: none;
+		}
+	}
+	.mobile {
+		&-btn {
+			background: transparent;
+			border: 0;
+			cursor: pointer;
+		}
+		&-menu {
+			position: absolute;
+			top: 0;
+			left: 0;
+			background-image: url('../../../../../public/img/hero/01_Hero.png');
+			@include mixins.backgroundImageProperties();
+			z-index: 1;
+			height: 70vh;
+			width: 100%;
+			transform: translateY(-110%);
+			transition: all 0.5s ease;
+			padding: 20px;
+			&.open {
+				transform: translateY(0%);
+			}
+		}
+		&-head {
+			@include mixins.flexBox($jc: space-between, $ai: center);
+			.close-btn {
+				width: 35px;
+				cursor: pointer;
+			}
+		}
+		&-nav {
+			padding: 100px 0 20px;
+			@include mixins.flexBox($fd: column, $g: 50px);
+			> * {
+				position: relative;
+				color: #fff;
+				text-decoration: none;
+				font-size: 1.5rem;
+			}
 		}
 	}
 }
@@ -43,36 +100,48 @@
 		background-position: center;
 	}
 	&circle {
-		background-image: url('../../../../../public/img/icons/hover-deco/circle.svg');
+		background-image: url('../../../../../public/img/icons/hover-deco/circle.png');
 		width: 130%;
 		height: 200%;
 		top: -11px;
-    	left: -12px;
-		@include mixins.headerHover(50%, 100%, 0deg, 50%, 0%);
+		left: -12px;
+		@include mixins.hoverDisplay(50%, 100%, 0deg, 50%, 0%);
 	}
 	&line {
-		background-image: url('../../../../../public/img/icons/hover-deco/short_line.svg');
+		background-image: url('../../../../../public/img/icons/hover-deco/line.png');
+		background-size: cover;
 		bottom: -10px;
 		top: unset;
-		width: 150%;
+		width: 200%;
 		height: 200%;
-		left: -10px;
-		@include mixins.headerHover(100%, 100%, 270deg, 0%, 0%);
+		left: -20px;
+		@include mixins.hoverDisplay(100%, 100%, 270deg, 0%, 0%);
 	}
 	&wave {
-		background-image: url('../../../../../public/img/icons/hover-deco/wave.svg');
+		background-image: url('../../../../../public/img/icons/hover-deco/wave.png');
+		background-size: cover;
 		left: -20px;
 		width: 150%;
 		height: 200%;
 		transform: translateY(-25%);
-		@include mixins.headerHover(100%, 100%, 270deg, 0%, 0%);
+		@include mixins.hoverDisplay(100%, 100%, 270deg, 0%, 0%);
 	}
 	&swoosh {
-		background-image: url('../../../../../public/img/icons/hover-deco/swoosh.svg');
+		background-image: url('../../../../../public/img/icons/hover-deco/swoosh.png');
+		background-size: cover;
 		width: 120%;
 		height: 200%;
 		left: -5px;
-	    top: -10px;
-		@include mixins.headerHover(100%, 100%, 270deg, 0%, 0%);
+		top: -10px;
+		@include mixins.hoverDisplay(100%, 100%, 270deg, 0%, 0%);
+	}
+}
+
+.socials {
+	padding-top: 20px;
+	@include mixins.flexBox($jc: center, $ai: center, $g: 20px);
+	a {
+		@include mixins.socials();
+		@include mixins.flexBox($jc: center, $ai: center);
 	}
 }

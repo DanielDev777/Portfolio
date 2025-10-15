@@ -4,23 +4,61 @@
 			<img src="/img/logo/logo.PNG" class="header-logo logo" />
 			<nav>
 				<a href="#about-me">
-					About Me
+					{{ 'header.about-me' | translate }}
 					<div class="hover-icon-circle"></div>
 				</a>
 				<a href="#skills">
-					Skills
+					{{ 'header.skills' | translate }}
 					<div class="hover-icon-line"></div>
 				</a>
 				<a href="#projects">
-					Projects
+					{{ 'header.projects' | translate }}
 					<div class="hover-icon-wave"></div>
 				</a>
 				<a href="#contact">
-					Contact
+					{{ 'header.contact' | translate }}
 					<div class="hover-icon-swoosh"></div>
 				</a>
 			</nav>
-			<ng-content></ng-content>
+			<app-lang-toggle class="desktop-lang"></app-lang-toggle>
+			<button class="mobile-btn" (click)="toggleMobileMenu()">
+				<img src="img/icons/menu.png" />
+			</button>
+			<div class="mobile-menu" [class.open]="isMobileMenuOpen()">
+				<div class="mobile-head">
+					<img src="/img/logo/logo.PNG" class="header-logo logo" />
+					<img
+						src="img/icons/close.svg"
+						class="close-btn"
+						alt="Close Icon"
+						(click)="closeMobileMenu()"
+					/>
+				</div>
+				<div class="mobile-nav">
+					<a href="#about-me">
+						{{ 'header.about-me' | translate }}
+						<div class="hover-icon-circle"></div>
+					</a>
+					<a href="#skills">
+						{{ 'header.skills' | translate }}
+						<div class="hover-icon-line"></div>
+					</a>
+					<a href="#projects">
+						{{ 'header.projects' | translate }}
+						<div class="hover-icon-wave"></div>
+					</a>
+					<a href="#contact">
+						{{ 'header.contact' | translate }}
+						<div class="hover-icon-swoosh"></div>
+					</a>
+					<app-lang-toggle></app-lang-toggle>
+				</div>
+				<div class="socials">
+					<a target="_blank" href="https://de.linkedin.com/in/kersten-daniel"><img src="img/icons/socials/linked-in.svg" alt="LinkedIn Icon"></a>
+					<a target="_blank" href="https://github.com/DanielDev777"><img src="img/icons/socials/github.svg" alt="Github Icon"></a>
+					<a target="_blank" href="mailto:daniel@dev-kersten.de"><img src="img/icons/socials/mail.svg" alt="Mail Icon"></a>
+				</div>
+			</div>
 		</div>
 	</div>
 </header>

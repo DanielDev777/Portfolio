@@ -18,17 +18,4 @@ import { SvgIconComponent } from "./shared/components/svg-icon/svg-icon.componen
 export class App {
 	protected readonly title = signal('portfolio');
 
-	private translate = inject(TranslateService);
-
-	selectedLang = signal('en');
-
-	constructor() {
-		this.translate.setFallbackLang('en');
-        this.translate.use('en');
-	}
-
-	useLanguage(language: string): void {
-		this.translate.use(language);
-		this.selectedLang.set(language);
-	}
 }

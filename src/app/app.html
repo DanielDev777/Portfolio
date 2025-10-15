@@ -1,17 +1,3 @@
-<app-header>
-	<div class="lang-toggle">
-		<button class="lang-btn active en-btn" [class.active]="selectedLang() === 'en'" (click)="useLanguage('en')">
-			EN
-			<div class="hover-icon-en"></div>
-		</button>
-		<div class="toggle" [class.de]="selectedLang() === 'de'">
-			<div class="knob"></div>
-		</div>
-		<button class="lang-btn de-btn" [class.active]="selectedLang() === 'de'" (click)="useLanguage('de')">
-			DE
-			<div class="hover-icon-de"></div>
-		</button>
-	</div>
-</app-header>
+<app-header></app-header>
 <router-outlet />
 <app-footer></app-footer>
