@@ -1,11 +1,24 @@
-:root {
-	// colors //
-	--highlight-primary: #BAE011;
-	--highlight-secondary: #7E4AE7;
-	--highlight-tertiary: #E08C05;
-	// colors //
+// colors //
+$highlight-primary: #BAE011;
+$highlight-secondary: #7E4AE7;
+$highlight-tertiary: #E08C05;
+$white: #fff;
+$black: #000;
+// colors //
 
-	// Background Images //
-	--hero: url('../public/img/hero/01_Hero.png');
-	// Background Images //
-}
+// BG Images //
+$hero-bg: url('../public/img/hero/01_Hero.png');
+// BG Images //
+
+// Spacings //
+$spacing-xs: 6px;
+$spacing-sm: 10px;
+$spacing-md: 20px;
+$spacing-lg: 50px;
+// Spacings //
+
+// Radius //
+$radius-full: 100%;
+$radius-half: 50%;
+$radius-pill: 33px;
+// Radius //

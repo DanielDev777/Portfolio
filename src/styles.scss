@@ -38,50 +38,80 @@ h1 {
 		font-size: 14vw;
 	}
 }
+h2 {
+	font-size: 4rem;
+	margin: 0;
+	@media(max-width: 767px) {
+		font-size: 3.2rem;
+	}
+	@media (max-width: 575px) {
+		font-size: 2.5rem;
+	}
+}
 p {
 	margin: 0;
+}
+.hide-mobile {
+	@media (max-width: 767px) {
+		display: none;
+	}
+}
+.show-mobile {
+	@media (min-width: 768px) {
+		display: none;
+	}
 }
 // General //
 
 // Buttons //
 .main-btn {
 	padding: 12px 18px;
-	border-radius: 33px;
+	border-radius: vars.$radius-pill;
 	width: fit-content;
 	background: transparent;
 	transition: all .3s ease;
 	cursor: pointer;
 }
+.btn-shadow-white {
+	@include mixins.boxShadowButton(vars.$white);
+}
+.btn-shadow-black {
+	@include mixins.boxShadowButton(vars.$black);
+}
 // Buttons //
 
 // Borders //
 .border-white {
-	@include mixins.buttonBorder(#fff, #fff);
+	@include mixins.buttonBorder(vars.$white, vars.$white);
 }
 .border-black {
-	@include mixins.buttonBorder(#000, #000);
+	@include mixins.buttonBorder(vars.$black, vars.$black);
 }
 .no-border {
-	@include mixins.buttonBorder(transparent, #fff);
+	@include mixins.buttonBorder(transparent, vars.$white);
 }
 // Borders //
 
 // Backgrounds //
 .hover--secondary {
 	&:hover {
-		background: var(--highlight-secondary);
+		background: vars.$highlight-secondary;
+		a {
+			color: vars.$white;
+		}
 	}
 }
 .hover--tertiary {
 	&:hover {
-		background: var(--highlight-tertiary);
+		color: vars.$white;
+		background: vars.$highlight-tertiary;
 	}
 }
 // Backgrounds //
 
 // Color //
 .white {
-	color: #fff;
+	color: vars.$white;
 }
 // Color //
 

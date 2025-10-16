@@ -1,0 +1,34 @@
+<section>
+	<div class="container">
+		<div class="skills">
+			<div class="skills-sidebar">
+				<p>{{ 'skills.stack' | translate }}</p>
+				<h2>{{ 'skills.skills' | translate }}</h2>
+			</div>
+			<div class="skills-content">
+				<div class="skills-introduction">
+					<img class="hide-mobile" src="img/skills/paper.png">
+					<img class="show-mobile" src="img/skills/paper-mobile.png">
+					<p>{{ 'skills.introduction' | translate }}</p>
+				</div>
+				<div class="skills-rep">
+					<div class="skills-rows">
+						@for (skill of skills; track skill) {
+							<div class="skill">
+								<img src="{{ skill.src }}" alt="{{ skill.name }} Icon">
+								<p>{{ skill.name }}</p>
+							</div>
+						}
+					</div>
+					<div class="skills-next">
+						<img src="">
+						<div class="skills-next-text">
+							<p>{{ 'skills.skills' | translate }}</p>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

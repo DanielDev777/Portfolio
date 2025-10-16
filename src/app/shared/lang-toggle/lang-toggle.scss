@@ -1,18 +1,19 @@
 @use '../../../mixins.scss';
+@use '../../../vars.scss';
 
 .lang-toggle {
 	display: flex;
 	align-items: center;
-	gap: 10px;
+	gap: vars.$spacing-sm;
 	.lang-btn {
 		background: none;
 		border: none;
-		color: #fff;
+		color: vars.$white;
 		cursor: pointer;
 		transition: color 0.3s;
 		position: relative;
 		&.active {
-			color: var(--highlight-tertiary);
+			color: vars.$highlight-tertiary;
 		}
 		.hover-icon-en,
 		.hover-icon-de {
@@ -47,20 +48,20 @@
 		position: relative;
 		width: 45px;
 		height: 20px;
-		background: var(--highlight-tertiary);
-		border-radius: 34px;
+		background: vars.$highlight-tertiary;
+		border-radius: vars.$radius-pill;
 		transition: background 0.3s;
-		height: 10px;
-		border: 2px solid #fff;
+		height: vars.$spacing-sm;
+		border: 2px solid vars.$white;
 		.knob {
 			position: absolute;
 			top: 50%;
 			left: -3px;
 			width: 16px;
 			height: 16px;
-			background: var(--highlight-secondary);
-			border: 2px solid #fff;
-			border-radius: 50%;
+			background: vars.$highlight-secondary;
+			border: 2px solid vars.$white;
+			border-radius: vars.$radius-pill;
 			transition: transform 0.3s ease;
 			transform: translateY(-50%);
 		}

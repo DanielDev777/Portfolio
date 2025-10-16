@@ -8,9 +8,41 @@
 			flex: 0 0 45%;
 			max-width: 45%;
 		}
+		@media (max-width: 767px) {
+			flex-direction: column;
+			> * {
+				flex: 0 0 100%;
+				max-width: 100%;
+			}
+		}
 	}
 	&-banners {
 		@include mixins.flexBox($fd: column, $jc: center, $ai: center);
+		@media (max-width: 767px) {
+			order: 1;
+		}
+	}
+	&-info {
+		@include mixins.flexBox($fd: column, $ai: flex-start, $g: 20px);
+		@media (max-width: 767px) {
+			order: 0;
+		}
+		@media (max-width: 575px) {
+			gap: vars.$spacing-sm;
+		}
+		> p {
+			font-size: 1.1rem
+		}
+		h2 {
+			@include mixins.headline(100%, 100%, 270deg, 0, 0, 'bottom', 'left', 30px, 'no');
+			&::before {
+				background-image: url('../../../../public/img/icons/about-me/about-line.png');
+			}
+		}
+		.contact-btn {
+			margin-top: 20px;
+			align-self: flex-end;
+		}
 	}
 }
 
@@ -20,14 +52,39 @@
 	position: relative;
 	> img {
 		width: 100%;
+		&:not(.banner-mobile) {
+			@media (max-width: 767px) {
+				display: none;
+			}
+		}
+	}
+	.banner-mobile {
+		@media (min-width: 768px) {
+			display: none;
+		}
 	}
 	&-inner {
 		position: absolute;
 		left: 50%;
-		@include mixins.flexBox($jc: center, $ai: center, $g: 10px);
+		@include mixins.flexBox($jc: center, $ai: center, $g: vars.$spacing-sm);
 		transform: translate(-50%, -50%);
+		width: 85%;
 		p {
 			font-size: 1.3rem;
+			@media (min-width: 768px) and (max-width: 991px) {
+				font-size: 1rem;
+			}
+			@media(max-width: 575px) {
+				font-size: 1rem;
+			}
+		}
+		img {
+			width: 35px;
+			height: 35px;
+			@media(max-width: 575px) {
+				width: 25px;
+				height: 25px;
+			}
 		}
 	}
 	&.location {

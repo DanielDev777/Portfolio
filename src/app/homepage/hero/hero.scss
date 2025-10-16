@@ -2,7 +2,7 @@
 @use '../../../mixins.scss';
 
 section {
-	background-image: var(--hero);
+	background-image: vars.$hero-bg;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -15,7 +15,7 @@ section {
 		position: relative;
 		@include mixins.flexBox($fd:column, $jc: center, $ai: unset);
 		&-polaroid {
-			background-color: #fff;
+			background-color: vars.$white;
 			padding: 16px;
 			position: absolute;
 			top: 10%;
@@ -115,14 +115,14 @@ section {
 		}
 		.contact-btn {
 			align-self: flex-end;
-			@include mixins.boxShadowButton(#fff);
+			@include mixins.boxShadowButton(vars.$white);
 		}
 	}
 	.container {
 		height: 100%;
 		position: relative;
 		.socials {
-			@include mixins.flexBox($fd:column, $jc: center, $ai: center, $g: 10px);
+			@include mixins.flexBox($fd:column, $jc: center, $ai: center, $g: vars.$spacing-sm);
 			position: absolute;
 			bottom: 0;
 			left: 0;

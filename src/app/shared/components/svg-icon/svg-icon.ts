@@ -9,28 +9,8 @@ import { Observable, map, shareReplay } from 'rxjs';
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [AsyncPipe],
-  template: `
-    <div 
-      class="svg-icon"
-      [style.width]="size() + 'px'"
-      [style.height]="size() + 'px'"
-      [innerHTML]="svgContent() | async">
-    </div>
-  `,
-  styles: [`
-    .svg-icon {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .svg-icon svg {
-      width: 100%;
-      height: 100%;
-      stroke: var(--highlight-primary);
-      stroke-width: 2;
-      fill: none;
-    }
-  `]
+  templateUrl: './svg-icon.html',
+  styleUrl: './svg-icon.scss'
 })
 export class SvgIconComponent {
   private http = inject(HttpClient);

@@ -1,3 +1,5 @@
+@use './vars.scss';
+
 // Animations
 @mixin hoverDisplay($ogx, $ogy, $deg, $endx, $endy) {
 	mask-position: $ogx $ogy;
@@ -43,13 +45,13 @@
 	text-transform: $ogcase;
 	&:hover {
 		text-transform: $endcase;
-		color: var(--highlight-primary);
+		color: vars.$highlight-primary;
 	}
 }
 @mixin socials() {
-	padding: 6px;
-	border: 1px solid #fff;
-	border-radius: 100%;
+	padding: vars.$spacing-xs;
+	border: 1px solid vars.$white;
+	border-radius: vars.$radius-full;
 	transition: all 0.2s ease;
 	position: relative;
 	overflow: hidden;
@@ -60,8 +62,8 @@
 		left: 0;
 		width: 100%;
 		height: 100%;
-		border-radius: 100%;
-		background: var(--highlight-secondary);
+		border-radius: vars.$radius-full;
+		background: vars.$highlight-secondary;
 		z-index: 0;
 		opacity: 0;
 		transition: all 0.3s ease;
@@ -74,19 +76,56 @@
 		}
 	}
 	&:last-of-type {
-		padding: 7px 6px;
+		padding: 7px vars.$spacing-xs;
 	}
 	img {
 		z-index: 1;
+	}
+}
+@mixin headline($ogx, $ogy, $deg, $posY, $posX, $posYType, $posXType, $ty, $circle) {
+	position: relative;
+	padding-bottom: 20px;
+	&::before {
+		content: '';
+		position: absolute;
+		@if ($posYType == 'bottom') {
+			bottom: $posY;
+		} @else {
+			top: $posY;
+		}
+		@if ($posXType == 'left') {
+			left: $posX;
+		} @else {
+			right: $posX;
+		}
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+		transform: translateY($ty);
+		@include backgroundImageProperties($bp: left, $bs: contain);
+		@if ($circle == 'yes') {
+			animation: 4s infinite 3s circleReappear;
+		} @else {
+			animation: 4s infinite 3s lineReappear;
+		}
+		mask-position: $ogx $ogy;
+		mask-size: 200% 200%;
+		mask-image: linear-gradient(
+			$deg,
+			transparent 0%,
+			transparent 50%,
+			white 50%,
+			white 100%
+		);
 	}
 }
 // Animations //
 
 // Background //
 @mixin backgroundImageProperties($bp: center, $br: no-repeat, $bs: cover) {
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
+	background-position: $bp;
+	background-repeat: $br;
+	background-size: $bs;
 }
 // Background //
 
@@ -121,6 +160,10 @@
 }
 // Flex //
 
+// Headline //
+
+// Headline //
+
 // Ripped Paper //
 @mixin rippedPaper($ty, $deg, $z, $top) {
 	@if ($ty != 0 and $deg != 0) {
@@ -154,6 +197,40 @@
 	}
 	100% {
 		transform: translateX(-20px) rotate(0deg);
+	}
+}
+@keyframes lineReappear {
+	0% {
+		mask-position: 100% 100%;
+	}
+	15% {
+		mask-position: 0% 0%;
+	}
+	75% {
+		mask-position: 0% 0%;
+	}
+	85% {
+		mask-position: 100% 100%;
+	}
+	100% {
+		mask-position: 100% 100%;
+	}
+}
+@keyframes circleReappear {
+	0% {
+		mask-position: 0% 100%;
+	}
+	15% {
+		mask-position: 100% 0%;
+	}
+	75% {
+		mask-position: 100% 0%;
+	}
+	85% {
+		mask-position: 0% 100%;
+	}
+	100% {
+		mask-position: 0% 100%;
 	}
 }
 // Keyframes //

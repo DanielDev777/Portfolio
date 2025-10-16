@@ -21,9 +21,19 @@
 		"who": "Who's Daniel?",
 		"about-me": "About me",
 		"info": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem blanditiis facilis reiciendis exercitationem veniam quasi quia eum repudiandae, illum repellat eligendi voluptate repellendus id vero laboriosam, nemo accusamus nisi optio.",
+		"subline": "Let's collaborate and build something remarkable together!",
 		"contact": "Let's talk",
 		"based": "Based in Hamburg",
 		"relocation": "Open to relocate",
 		"remote": "Open to work remote"
+	},
+	"skills": {
+		"stack": "MY STACK",
+		"skills": "Skill set",
+		"introduction": "A short introduction of your skills. Highlight your experience of using different front-end technologies and emphasise your openness to learning and adapting to new technologies.",
+		"next": "Also, I'm interested in diving into:",
+		"react": "React",
+		"laravel": "Laravel",
+		"c-sharp": "C#"
 	}
 }

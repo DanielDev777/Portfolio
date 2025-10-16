@@ -1,0 +1,84 @@
+@use '../../../vars.scss';
+@use '../../../mixins.scss';
+
+section {
+	background-image: url('../../../../public/img/skills/background.png');
+	@include mixins.backgroundImageProperties($bp: bottom, $bs: unset);
+}
+
+.skills {
+	@include mixins.flexBox($jc: space-between);
+	* {
+		color: vars.$white;
+	}
+	&-sidebar {
+		@include mixins.flexBox($fd: column, $jc:flex-start, $ai: flex-end, $g: 20px);
+		flex: 0 0 350px;
+		max-width: 350px;
+		p {
+			font-size: 1.1rem;
+		}
+		h2 {
+			position: relative;
+			&::before {
+				background-image: url('../../../../public/img/icons/skills/circle.png');
+				width: 120% !important;
+				height: 120% !important;
+			}
+			@include mixins.headline(0%, 100%, 45deg, -5px, -20px, 'top', 'left', -20px, 'yes');
+		}
+	}
+	&-introduction {
+		position: relative;
+		width: 80%;
+		margin-bottom: vars.$spacing-lg;
+		p {
+			padding: vars.$spacing-md;
+			position: absolute;
+			top: 0;
+			left: 0;
+			color: vars.$black;
+			transform: translateY(vars.$spacing-md);
+		}
+		img {
+			width: 100%;
+			object-fit: contain;
+		}
+	}
+	&-content {
+		flex: 0 0 calc(100% - 400px);
+		max-width: calc(100% - 400px);
+	}
+	&-rep {
+		@include mixins.flexBox($jc: space-between, $ai: flex-start);
+		margin-bottom: vars.$spacing-lg;
+	}
+	&-rows {
+		flex: 0 0 calc(100% - 200px);
+		max-width: calc(100% - 200px);
+		@include mixins.flexBox($jc: space-evenly, $ai: flex-start, $g: vars.$spacing-sm);
+		flex-wrap: wrap;
+		.skill {
+			flex: 0 0 120px;
+			max-width: 120px;
+			height: 100px;
+			@include mixins.flexBox($fd: column, $jc: space-between, $ai: center, $g: vars.$spacing-xs);
+			img {
+				filter: grayscale(1);
+				transition: all .2s ease-in;
+				&:hover {
+					filter: grayscale(0);
+					transform: scale(0.8);
+				}
+			}
+			p {
+				justify-self: flex-end;
+			}
+		}
+	}
+	&-next {
+		flex: 0 0 200px;
+		max-width: 200px;
+		cursor: grab;
+	}
+}

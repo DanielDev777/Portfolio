@@ -7,7 +7,7 @@ import {
 	TranslateDirective,
 	TranslateService
 } from '@ngx-translate/core';
-import { SvgIconComponent } from "./shared/components/svg-icon/svg-icon.component";
+import { SvgIconComponent } from "./shared/components/svg-icon/svg-icon";
 
 @Component({
 	selector: 'app-root',

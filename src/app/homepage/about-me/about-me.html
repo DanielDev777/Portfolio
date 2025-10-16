@@ -3,6 +3,7 @@
 		<div class="about-banners">
 			<div class="banner location">
 				<img src="img/about/primary.png" alt="">
+				<img class="banner-mobile" src="img/about/primary-mobile.png">
 				<div class="banner-inner">
 					<img src="img/icons/about-me/location.svg" />
 					<p class="white">{{ 'about.based' |translate }}</p>
@@ -10,6 +11,7 @@
 			</div>
 			<div class="banner relocation">
 				<img src="img/about/secondary.png" alt="">
+				<img class="banner-mobile" src="img/about/secondary.png">
 				<div class="banner-inner">
 					<img src="img/icons/about-me/path.svg" />
 					<p class="white">{{ 'about.relocation' |translate }}</p>
@@ -17,6 +19,7 @@
 			</div>
 			<div class="banner remote">
 				<img src="img/about/tertiary.png" alt="">
+				<img class="banner-mobile" src="img/about/tertiary.png">
 				<div class="banner-inner">
 					<img src="img/icons/about-me/remote.svg" />
 					<p class="white">{{ 'about.remote' |translate }}</p>
@@ -24,8 +27,15 @@
 			</div>
 		</div>
 		<div class="about-info">
-			<p>{{ 'about.who' |translate }}</p>
+			<p class="about-who">{{ 'about.who' |translate }}</p>
 			<h2>{{ 'about.about-me' |translate }}</h2>
+			<p class="about-text">{{ 'about.info' |translate }}</p>
+			<p class="about-subline">{{ 'about.subline' |translate }}</p>
+			<button class="main-btn border-black hover--secondary contact-btn btn-shadow-black">
+				<a href="#contact">
+					{{ 'about.contact' |translate }}
+				</a>
+			</button>
 		</div>
 	</div>
 </section>
