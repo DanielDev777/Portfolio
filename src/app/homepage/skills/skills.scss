@@ -3,18 +3,31 @@
 
 section {
 	background-image: url('../../../../public/img/skills/background.png');
-	@include mixins.backgroundImageProperties($bp: bottom, $bs: unset);
+	@include mixins.backgroundImageProperties($bp: bottom, $bs: cover);
 }
 
 .skills {
-	@include mixins.flexBox($jc: space-between);
+	@include mixins.flexBox($jc: space-between, $ai: flex-start);
 	* {
 		color: vars.$white;
 	}
+	@media (max-width: 1200px) {
+		flex-direction: column;
+	}
 	&-sidebar {
-		@include mixins.flexBox($fd: column, $jc:flex-start, $ai: flex-end, $g: 20px);
+		@include mixins.flexBox(
+			$fd: column,
+			$jc: flex-start,
+			$ai: flex-end,
+			$g: 20px
+		);
 		flex: 0 0 350px;
 		max-width: 350px;
+		@media (max-width: 1200px) {
+			align-self: flex-end;
+			flex: unset;
+
+		}
 		p {
 			font-size: 1.1rem;
 		}
@@ -25,7 +38,25 @@ section {
 				width: 120% !important;
 				height: 120% !important;
 			}
-			@include mixins.headline(0%, 100%, 45deg, -5px, -20px, 'top', 'left', -20px, 'yes');
+			@include mixins.headline(
+				0%,
+				100%,
+				45deg,
+				-5px,
+				-20px,
+				'top',
+				'left',
+				-20px,
+				'yes'
+			);
+		}
+	}
+	&-content {
+		flex: 0 0 calc(100% - 400px);
+		max-width: calc(100% - 400px);
+		@media (max-width: 1200px) {
+			flex: 0 0 100%;
+			max-width: 100%;
 		}
 	}
 	&-introduction {
@@ -35,37 +66,66 @@ section {
 		p {
 			padding: vars.$spacing-md;
 			position: absolute;
-			top: 0;
+			top: 50%;
 			left: 0;
 			color: vars.$black;
-			transform: translateY(vars.$spacing-md);
+			transform: translateY(-50%);
 		}
 		img {
 			width: 100%;
 			object-fit: contain;
 		}
-	}
-	&-content {
-		flex: 0 0 calc(100% - 400px);
-		max-width: calc(100% - 400px);
+		@media (max-width: 1200px) {
+			width: 100%;
+		}
 	}
 	&-rep {
-		@include mixins.flexBox($jc: space-between, $ai: flex-start);
+		@include mixins.flexBox($jc: flex-start, $ai: flex-start);
 		margin-bottom: vars.$spacing-lg;
+		@media (max-width: 767px) {
+			flex-direction: column;
+		}
 	}
 	&-rows {
-		flex: 0 0 calc(100% - 200px);
-		max-width: calc(100% - 200px);
-		@include mixins.flexBox($jc: space-evenly, $ai: flex-start, $g: vars.$spacing-sm);
-		flex-wrap: wrap;
+		flex: 0 0 calc(100% - 250px);
+		max-width: calc(100% - 250px);
+		@include mixins.flexBox(
+			$jc: flex-start,
+			$ai: flex-start,
+			$g: vars.$spacing-md
+			);
+			flex-wrap: wrap;
+		@media (max-width: 767px) {
+			flex: 0 0 100%;
+			max-width: 100%;
+			margin-bottom: vars.$spacing-lg;
+			column-gap: 5px;
+			row-gap: vars.$spacing-md;
+		}
+		@media (max-width: 575px) {
+			margin-bottom: 0;
+		}
+		@media (max-width: 375px) {
+			margin-bottom: vars.$spacing-lg;
+			justify-content: center;
+		}
 		.skill {
 			flex: 0 0 120px;
 			max-width: 120px;
 			height: 100px;
-			@include mixins.flexBox($fd: column, $jc: space-between, $ai: center, $g: vars.$spacing-xs);
+			@include mixins.flexBox(
+				$fd: column,
+				$jc: space-between,
+				$ai: center,
+				$g: vars.$spacing-xs
+			);
+			@media (max-width: 767px) {
+				flex: 0 0 100px;
+				max-width: 100px;
+			}
 			img {
 				filter: grayscale(1);
-				transition: all .2s ease-in;
+				transition: all 0.2s ease-in;
 				&:hover {
 					filter: grayscale(0);
 					transform: scale(0.8);
@@ -79,6 +139,78 @@ section {
 	&-next {
 		flex: 0 0 200px;
 		max-width: 200px;
-		cursor: grab;
+		height: 200px;
+		position: relative;
+		@include mixins.flexBox();
+		transform: rotate(10deg);
+		overflow: hidden;
+		@media (max-width: 767px) {
+			align-self: flex-end;
+			margin-bottom: vars.$spacing-md;
+			margin-right: vars.$spacing-md;
+		}
+		&-start,
+		&-end {
+			position: absolute;
+		}
+		&-start,
+		&-end {
+			top: 0;
+			left: 0;
+			width: 100%;
+		}
+		&-start {
+			z-index: 2;
+			background-image: url('../../../../public/img/skills/start.png');
+			@include mixins.backgroundImageProperties();
+			@include mixins.flexBox($fd: column, $g: vars.$spacing-md);
+			width: 100%;
+			height: 100%;
+			padding: 0 vars.$spacing-md;
+			cursor: grab;
+			img {
+				width: 50px;
+			}
+			p {
+				font-size: 2rem;
+				font-family: 'Kalam', sans-serif;
+				text-align: center;
+				line-height: 1;
+			}
+			img,
+			p {
+				transition: all .2s ease;
+			}
+			&.cdk-drag-dragging {
+				cursor: grabbing;
+			}
+			&.cdk-drag-dragging,
+			&.moved {
+				background-image: url('../../../../public/img/skills/transition-transparent.png');
+				img,
+				p {
+					opacity: 0;
+				}
+			}
+		}
+		&-container {
+			z-index: 1;
+			text-align: center;
+			width: 100%;
+			padding: 0 vars.$spacing-sm;
+			@include mixins.flexBox($g: vars.$spacing-sm);
+			flex-wrap: wrap;
+			img {
+				width: 35px;
+			}
+		}
+		&-box {
+			flex: 0 0 40%;
+			max-width: 40%;
+			@include mixins.flexBox($fd: column, $g: vars.$spacing-xs);
+		}
+		&-end {
+			z-index: 0;
+		}
 	}
 }

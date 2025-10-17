@@ -7,25 +7,53 @@
 			</div>
 			<div class="skills-content">
 				<div class="skills-introduction">
-					<img class="hide-mobile" src="img/skills/paper.png">
-					<img class="show-mobile" src="img/skills/paper-mobile.png">
+					<img class="hide-mobile" src="img/skills/paper.png" />
+					<img
+						class="show-mobile"
+						src="img/skills/paper-mobile.png"
+					/>
 					<p>{{ 'skills.introduction' | translate }}</p>
 				</div>
 				<div class="skills-rep">
 					<div class="skills-rows">
 						@for (skill of skills; track skill) {
-							<div class="skill">
-								<img src="{{ skill.src }}" alt="{{ skill.name }} Icon">
-								<p>{{ skill.name }}</p>
-							</div>
+						<div class="skill">
+							<img
+								src="{{ skill.src }}"
+								alt="{{ skill.name }} Icon"
+							/>
+							<p>{{ skill.name }}</p>
+						</div>
 						}
 					</div>
 					<div class="skills-next">
-						<img src="">
-						<div class="skills-next-text">
-							<p>{{ 'skills.skills' | translate }}</p>
-
+						<div
+							class="skills-next-start"
+							[class.moved]="isDragged()"
+							cdkDrag
+							(cdkDragEnded)="onDragEnded($event)"
+							(cdkDragMoved)="onDragMoved($event)"
+						>
+							<img src="img/icons/skills/arrow.png" />
+							<p>{{ 'skills.pull' | translate }}</p>
+							<!-- <img class="sticker" src="img/skills/start.png"> -->
 						</div>
+						<div class="skills-next-container">
+							<span>{{ 'skills.next' | translate }}</span>
+							<div class="skills-next-box">
+								<img src="img/icons/skills/react.svg" />
+								{{ 'skills.react' | translate }}
+							</div>
+							<div class="skills-next-box">
+								<img src="img/icons/skills/c-sharp.png" />
+								<span>{{ 'skills.c-sharp' | translate }}</span>
+							</div>
+						</div>
+						<img
+							class="skills-next-end"
+							src="img/skills/end.png"
+							alt=""
+						/>
 					</div>
 				</div>
 			</div>
