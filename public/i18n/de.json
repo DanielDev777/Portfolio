@@ -36,5 +36,20 @@
 		"laravel": "Laravel",
 		"c-sharp": "C#",
 		"pull": "Pull to peel"
+	},
+	"projects": {
+		"subline": "MY CRAFT",
+		"headline": "Projects",
+		"info": "Encourage people to take a look and interact with your projects. Highlight your approach to creating responsive, user-friendly projects with efficient code.",
+		"description": "Description",
+		"implementation": "Implementation Details",
+		"duration": "Duration: ",
+		"github": "Github",
+		"live": "Live Test",
+		"back": "Go back",
+		"next": "Next Project",
+		"featured": "Featured Project",
+		"check": "Check all details",
+		"details": "Project details"
 	}
 }

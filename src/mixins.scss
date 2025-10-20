@@ -233,4 +233,24 @@
 		mask-position: 0% 100%;
 	}
 }
+@keyframes upAndDown {
+	0% {
+		transform: translateY(0) scale(1);
+	}
+	50% {
+		transform: translateY(50px) scale(1);
+	}
+	100% {
+		transform: translateY(0) scale(1);
+	}
+}
+@keyframes hoverFeaturedProject {
+	0% {
+		transform: translateY(0) scale(1);
+	}
+	100% {
+		transform: translateY(0) scale(1.1);
+	}
+
+}
 // Keyframes //
