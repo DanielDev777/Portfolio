@@ -12,9 +12,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		// @media (max-width: 767px) {
-		// 	display: none;
-		// }
+
 	}
 	&-logo {
 		height: 50px;
@@ -144,5 +142,23 @@
 	a {
 		@include mixins.socials();
 		@include mixins.flexBox($jc: center, $ai: center);
+	}
+}
+
+:host(.modal-header) {
+	width: 100%;
+	.header {
+		position: unset;
+	}
+	.logo {
+		filter: brightness(0);
+	}
+	nav {
+		a {
+			&:first-of-type,
+			&:nth-of-type(2) {
+				color: black;
+			}
+		}
 	}
 }

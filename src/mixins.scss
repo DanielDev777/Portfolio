@@ -150,6 +150,23 @@
 }
 // Box shadow //
 
+// Button //
+@mixin projectNavigation($justify: flex-start, $color) {
+	@include flexBox($jc: $justify, $g: 10px);
+	border: 0;
+	background-color: transparent;
+	font-weight: 600;
+	&:hover {
+		cursor: pointer;
+		color: $color;
+	}
+	img {
+		width: 25px;
+		object-fit: contain;
+	}
+}
+// Button //
+
 // Flex //
 @mixin flexBox($fd: row, $jc: center, $ai: center, $g: 0px) {
 	display: flex;

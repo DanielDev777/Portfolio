@@ -1,1 +1,60 @@
-<p>single-project works!</p>
+<div class="project-modal">
+	<app-header class="modal-header"></app-header>
+	<div class="container">
+		<div class="project-modal-breadcrumbs">
+			<button class="project-modal-back" (click)="closeModal()">
+				<img src="img/icons/projects/arrow-back.png">
+				{{ 'projects.back'|translate }}
+			</button>
+		</div>
+		<div class="project-modal-content">
+			<div class="project-modal-info">
+				<h2>{{ project().name }}</h2>
+				<div class="project-modal-description">
+					<h3>{{ 'projects.description'|translate }}</h3>
+					<p>{{ project().description }}</p>
+				</div>
+				<div class="project-modal-details">
+					<h3>{{ 'projects.implementation'|translate }}</h3>
+					<p>{{ project().details }}</p>
+				</div>
+				<div class="project-modal-duration">
+					<h4>{{ 'projects.duration'|translate }}</h4>
+					<p>{{ project().duration }}</p>
+				</div>
+				<div class="project-modal-skills">
+					@for (skill of project().skills; track skill.name) {
+						<div class="project-modal-skill">
+							<img src="{{ skill.img }}">
+							<span>{{ skill.name }}</span>
+						</div>
+					}
+				</div>
+			</div>
+			<div class="project-modal-demo">
+				<img src="{{ project().detailImg }}">
+				@if (project().id === 0) {
+					<img src="img/projects/round-sticker.png" class="sticker">
+				} @else {
+					<div class="sticker blank">
+						<img src="img/logo/logo.PNG">
+					</div>
+				}
+				<div class="project-modal-links">
+					<button class="main-btn border-white hover--secondary btn-shadow-white">
+						<a href="{{ project().github }}">{{ 'projects.github'|translate }}</a>
+					</button>
+					<button class="main-btn border-white hover--secondary btn-shadow-white">
+						<a href="{{ project().live }}">{{ 'projects.live'|translate }}</a>
+					</button>
+				</div>
+			</div>
+		</div>
+		<div class="project-modal-switch">
+			<button class="project-modal-next" (click)="closeModal()">
+				{{ 'projects.next'|translate }}
+				<img src="img/icons/projects/arrow-next.png">
+			</button>
+		</div>
+	</div>
+</div>

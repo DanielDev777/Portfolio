@@ -1,0 +1,102 @@
+@use '../../../../vars.scss';
+@use '../../../../mixins.scss';
+
+.project-modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background: #1D1D1D url(../../../../../public/img/projects/notebook_bg.png) ;
+	@include mixins.backgroundImageProperties($bs: cover, $bp: left);
+	@include mixins.flexBox($fd: column, $jc: flex-start, $ai: flex-start);
+	z-index: 5;
+	&-content {
+		background-color: transparent;
+		text-align: center;
+		width: 100%;
+		padding: vars.$spacing-lg vars.$spacing-xxl;
+		@include mixins.flexBox($ai: flex-start, $jc: space-between);
+	}
+	&-breadcrumbs {
+		padding: vars.$spacing-lg vars.$spacing-md 0;
+	}
+	&-back {
+		@include mixins.projectNavigation($color: vars.$highlight-tertiary);
+	}
+	&-info {
+		flex: 0 0 45%;
+		max-width: 45%;
+		text-align: start;
+		@include mixins.flexBox($fd: column, $jc: center, $ai: flex-start, $g: vars.$spacing-mdg);
+		h2 {
+			@include mixins.headline(100%, 100%, 270deg, 0, 0, 'bottom', 'left', 30px, 'no');
+			width: fit-content;
+			padding-bottom: vars.$spacing-lg;
+			&::before {
+				background-image: url('../../../../../public/img/icons/about-me/about-line.png');
+			}
+		}
+	}
+	&-description,
+	&-details {
+		@include mixins.flexBox($fd: column, $jc: flex-start, $ai: flex-start, $g: vars.$spacing-smd);
+	}
+	&-duration {
+		@include mixins.flexBox($jc: flex-start, $g: vars.$spacing-sm);
+	}
+	&-skills {
+		@include mixins.flexBox($jc: flex-start, $g: vars.$spacing-sm);
+	}
+	&-skill {
+		@include mixins.flexBox($jc: flex-start, $g: vars.$spacing-xs);
+		img {
+			width: 25px;
+			height: 25px;
+		}
+	}
+	&-demo {
+		flex: 0 0 45%;
+		max-width: 45%;
+		position: relative;
+		@include mixins.flexBox($fd: column, $ai: flex-end, $g: vars.$spacing-lg);
+		img {
+			&:not(.sticker) {
+				width: 100%;
+				border-radius: vars.$radius-img;
+			}
+		}
+	}
+	&-links {
+		@include mixins.flexBox($jc: flex-end, $g: vars.$spacing-md);
+		padding: 0 vars.$spacing-xs vars.$spacing-xs 0;
+	}
+	&-switch {
+		width: 100%;
+		@include mixins.flexBox($jc: flex-end);
+		padding: 0 vars.$spacing-xxl;
+	}
+	&-next {
+		color: #fff;
+		@include mixins.projectNavigation($color: vars.$highlight-tertiary);
+	}
+}
+
+.sticker {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	width: 120px;
+	height: 120px;
+	transform: translate(50%, -50%);
+	&.blank {
+		background-image: url('../../../../../public/img/projects/blank-sticker.png');
+		@include mixins.backgroundImageProperties($bs: contain);
+		@include mixins.flexBox();
+		img {
+			width: 50px;
+			object-fit: contain;
+			filter: brightness(0);
+		}
+	}
+}
