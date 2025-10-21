@@ -37,7 +37,17 @@
 					<img src="img/projects/round-sticker.png" class="sticker">
 				} @else {
 					<div class="sticker blank">
-						<img src="img/logo/logo.PNG">
+						<svg class="circular-text" viewBox="0 0 200 200" width="200" height="200">
+							<defs>
+								<path id="circle" d="M 100, 100 m -82, 0 a 82,82 0 1,1 164,0 a 82,82 0 1,1 -164,0"></path>
+							</defs>
+							<text font-family="Arial" font-size="8" font-weight="bold" fill="currentColor">
+								<textPath href="#circle" startOffset="0%">
+									{{ 'projects.name'|translate }} • {{ 'projects.developer'|translate }} • {{ 'projects.name'|translate }} • {{ 'projects.developer'|translate }} • 
+								</textPath>
+							</text>
+						</svg>
+						<img src="img/logo/logo.PNG" class="center-logo">
 					</div>
 				}
 				<div class="project-modal-links">
