@@ -16,7 +16,11 @@
 						<button (click)="showModal(singleproject)" value="{{ singleproject.id }}" class="main-btn border-white hover--secondary btn-shadow-white">{{ 'projects.details' |translate}}</button>
 					</div>
 					<h3>{{ singleproject.name }}</h3>
-					<p>{{ singleproject.description }}</p>
+					@if (selectedLang() === 'en') {
+						<p>{{ singleproject.description.en }}</p>
+					} @else {
+						<p>{{ singleproject.description.de }}</p>
+					}
 					<button (click)="showModal(singleproject)" value="{{ singleproject.id }}" class="main-btn border-black hover--secondary btn-shadow-black show-tablet">{{ 'projects.details' |translate}}</button>
 				</div>
 			}

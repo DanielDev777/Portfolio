@@ -30,7 +30,6 @@
 		width: 100%;
 		padding: vars.$spacing-lg vars.$spacing-xxl;
 		@include mixins.flexBox($ai: flex-start, $jc: space-between);
-		min-height: calc(100vh - 160px); // Account for header and breadcrumbs
 		
 		@media (max-width: 991px) {
 			@include mixins.flexBox($fd: column, $ai: flex-start, $jc: flex-start, $g: vars.$spacing-lg);
@@ -53,7 +52,7 @@
 	}
 	&-back {
 		@include mixins.projectNavigation($color: vars.$highlight-tertiary);
-		@media (max-width: 575px) {
+		@media (max-width: 600px) {
 			color: #fff;
 		}
 	}
@@ -143,6 +142,9 @@
 	}
 	&-next {
 		color: #fff;
+		@media (max-width: 991px) and (min-width: 651px) {
+			color: #000;
+		}
 		@include mixins.projectNavigation($color: vars.$highlight-tertiary);
 	}
 }

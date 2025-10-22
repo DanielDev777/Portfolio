@@ -2,12 +2,13 @@ import {
 	ChangeDetectionStrategy,
 	Component,
 	computed,
+	inject,
 	input,
 	output
 } from '@angular/core';
 import { PROJECTS_DATA, type Project } from '../projects.data';
 import { Header } from '../../../shared/components/header/header';
-import { TranslatePipe } from '@ngx-translate/core';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 
 @Component({
 	selector: 'app-single-project',
@@ -22,6 +23,12 @@ export class SingleProject {
 
 	close = output<void>();
 	projectChanged = output<Project>();
+
+	private translate = inject(TranslateService);
+
+	selectedLang(): string {
+		return this.translate.getCurrentLang();
+	}
 
 	closeModal(): void {
 		this.close.emit();

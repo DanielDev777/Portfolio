@@ -12,15 +12,27 @@
 				<h2>{{ project().name }}</h2>
 				<div class="project-modal-description">
 					<h3>{{ 'projects.description'|translate }}</h3>
-					<p>{{ project().description }}</p>
+					@if (selectedLang() === 'en') {
+						<p>{{ project().description.en }}</p>
+					} @else {
+						<p>{{ project().description.de }}</p>
+					}
 				</div>
 				<div class="project-modal-details">
 					<h3>{{ 'projects.implementation'|translate }}</h3>
-					<p>{{ project().details }}</p>
+					@if (selectedLang() === 'en') {
+						<p>{{ project().details.en }}</p>
+					} @else {
+						<p>{{ project().details.de }}</p>
+					}
 				</div>
 				<div class="project-modal-duration">
 					<h4>{{ 'projects.duration'|translate }}</h4>
-					<p>{{ project().duration }}</p>
+					@if (selectedLang() === 'en') {
+						<p>{{ project().duration.en }}</p>
+					} @else {
+						<p>{{ project().duration.de }}</p>
+					}
 				</div>
 				<div class="project-modal-skills">
 					@for (skill of project().skills; track skill.name) {

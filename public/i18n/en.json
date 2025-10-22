@@ -53,5 +53,10 @@
 		"details": "Project details",
 		"name": "Daniel Kersten",
 		"developer": "Frontend Developer"
+	},
+	"testimonials": {
+		"subline": "IN THEIR WORDS:",
+		"headline": "Colleagues' Thoughts",
+		"profile": "Profile"
 	}
 }

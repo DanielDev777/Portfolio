@@ -1,0 +1,40 @@
+<section>
+	<div class="container">
+		<div class="testimonials">
+			<div class="intro">
+				<p>{{ 'testimonials.subline' |translate}}</p>
+				<h2>{{ 'testimonials.headline' |translate}}</h2>
+			</div>
+			<div class="testimonials-reviews">
+				@for (review of testimonials; track $index) {
+					<div class="review">
+						@if ($even) {
+							<img src="img/testimonials/card-a.png">
+						} @else if ($odd) {
+							<img src="img/testimonials/card-b.png">
+						}
+						<div class="review-content">
+							<p>
+								@if (selectedLang() === 'en') {
+									{{ review.text.en }}
+								} @else {
+									{{ review.text.de }}
+								}
+							</p>
+							<div class="review-footer">
+								<div class="review-info">
+									<p class="review-name">{{ review.name }}</p>
+									<p class="review-title">{{ review.title }}</p>
+								</div>
+								<a href="{{ review.link }}">
+									<img src="img/icons/testimonials/linkedin.svg">
+									{{ 'testimonials.profile'|translate }}
+								</a>
+							</div>
+						</div>
+					</div>
+				}
+			</div>
+		</div>
+	</div>
+</section>

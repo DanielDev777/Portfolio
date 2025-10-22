@@ -1,5 +1,5 @@
-import { Component, signal, ChangeDetectionStrategy } from '@angular/core';
-import { TranslatePipe } from '@ngx-translate/core';
+import { Component, signal, ChangeDetectionStrategy, inject } from '@angular/core';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { PROJECTS_DATA, type Project } from './projects.data';
 import { SingleProject } from './single-project/single-project';
 
@@ -11,6 +11,8 @@ import { SingleProject } from './single-project/single-project';
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class Projects {
+	private translate = inject(TranslateService);
+	
 	projects: Project[] = PROJECTS_DATA;
 	isModalVisible = signal(false);
 	selectedProject = signal<Project | null>(null);
@@ -27,5 +29,9 @@ export class Projects {
 
 	changeProject(newProject: Project): void {
 		this.selectedProject.set(newProject);
+	}
+
+	selectedLang(): string {
+		return this.translate.getCurrentLang();
 	}
 }
