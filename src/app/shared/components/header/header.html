@@ -21,18 +21,17 @@
 				</a>
 			</nav>
 			<app-lang-toggle class="desktop-lang"></app-lang-toggle>
-			<button class="mobile-btn" (click)="toggleMobileMenu()">
-				<img src="img/icons/menu.png" />
-			</button>
+			<button class="mobile-btn" (click)="toggleMobileMenu()"></button>
 			<div class="mobile-menu" [class.open]="isMobileMenuOpen()">
 				<div class="mobile-head">
 					<img src="/img/logo/logo.PNG" class="header-logo logo" />
-					<img
-						src="img/icons/close.svg"
+					<!-- <img
+						src="img/icons/close.png"
 						class="close-btn"
 						alt="Close Icon"
 						(click)="closeMobileMenu()"
-					/>
+					/> -->
+					<button class="close-btn" (click)="closeMobileMenu()"></button>
 				</div>
 				<div class="mobile-nav">
 					<a href="#about-me">

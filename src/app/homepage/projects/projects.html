@@ -17,10 +17,11 @@
 					</div>
 					<h3>{{ singleproject.name }}</h3>
 					<p>{{ singleproject.description }}</p>
+					<button (click)="showModal(singleproject)" value="{{ singleproject.id }}" class="main-btn border-black hover--secondary btn-shadow-black show-tablet">{{ 'projects.details' |translate}}</button>
 				</div>
 			}
 			@if (isModalVisible() && selectedProject()) {
-					<app-single-project (close)="hideModal()" [project]="selectedProject()!"></app-single-project>
+				<app-single-project (close)="hideModal()" (projectChanged)="changeProject($event)" [project]="selectedProject()!"></app-single-project>
 			}
 		</div>
 	</div>

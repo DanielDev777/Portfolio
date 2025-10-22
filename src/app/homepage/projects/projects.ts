@@ -24,4 +24,8 @@ export class Projects {
 		this.isModalVisible.set(false);
 		this.selectedProject.set(null);
 	}
+
+	changeProject(newProject: Project): void {
+		this.selectedProject.set(newProject);
+	}
 }

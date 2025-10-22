@@ -1,14 +1,13 @@
 import {
 	ChangeDetectionStrategy,
 	Component,
-	EventEmitter,
+	computed,
 	input,
-	Output
+	output
 } from '@angular/core';
-import { type Project } from '../projects.data';
+import { PROJECTS_DATA, type Project } from '../projects.data';
 import { Header } from '../../../shared/components/header/header';
 import { TranslatePipe } from '@ngx-translate/core';
-
 
 @Component({
 	selector: 'app-single-project',
@@ -18,11 +17,24 @@ import { TranslatePipe } from '@ngx-translate/core';
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SingleProject {
+	projects: Project[] = PROJECTS_DATA;
 	project = input.required<Project>();
 
-	@Output() close = new EventEmitter<void>();
+	close = output<void>();
+	projectChanged = output<Project>();
 
 	closeModal(): void {
 		this.close.emit();
+	}
+
+	nextProject(): void {
+		const currentProject = this.project();
+		const currentIndex = this.projects.findIndex(
+			(p) => p.id === currentProject.id
+		);
+		const nextIndex = (currentIndex + 1) % this.projects.length; // Wrap around to first project
+		const nextProject = this.projects[nextIndex];
+
+		this.projectChanged.emit(nextProject);
 	}
 }

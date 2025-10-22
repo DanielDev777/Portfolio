@@ -7,32 +7,72 @@
 	left: 0;
 	width: 100%;
 	height: 100vh;
-	background: #1D1D1D url(../../../../../public/img/projects/notebook_bg.png) ;
+	background: #1D1D1D url(../../../../../public/img/projects/notebook_bg.png);
 	@include mixins.backgroundImageProperties($bs: cover, $bp: left);
-	@include mixins.flexBox($fd: column, $jc: flex-start, $ai: flex-start);
 	z-index: 5;
+	overflow-y: auto;
+	
+	@media (max-width: 1400px) {
+		@include mixins.backgroundImageProperties($bs: cover, $bp: 40% center);
+	}
+	@media (max-width: 991px) {
+		background: #1D1D1D url(../../../../../public/img/projects/mobile-bg.png) no-repeat;
+		@include mixins.backgroundImageProperties($bs: cover, $bp: top);
+		background-attachment: local;
+		.container {
+			@include mixins.flexBox($fd: column, $ai: flex-start);
+			position: relative;
+		}
+	}
 	&-content {
 		background-color: transparent;
 		text-align: center;
 		width: 100%;
 		padding: vars.$spacing-lg vars.$spacing-xxl;
 		@include mixins.flexBox($ai: flex-start, $jc: space-between);
+		min-height: calc(100vh - 160px); // Account for header and breadcrumbs
+		
+		@media (max-width: 991px) {
+			@include mixins.flexBox($fd: column, $ai: flex-start, $jc: flex-start, $g: vars.$spacing-lg);
+			padding: vars.$spacing-md;
+			min-height: auto;
+		}
+		@media (max-width: 767px) {
+			padding: 0;
+		}
+		@media (max-width: 767px) {
+			gap: 40px;
+		}
 	}
 	&-breadcrumbs {
 		padding: vars.$spacing-lg vars.$spacing-md 0;
+		@media (max-width: 991px) {
+			padding: vars.$spacing-md 0;
+			order: 1;
+		}
 	}
 	&-back {
 		@include mixins.projectNavigation($color: vars.$highlight-tertiary);
+		@media (max-width: 575px) {
+			color: #fff;
+		}
 	}
 	&-info {
 		flex: 0 0 45%;
 		max-width: 45%;
 		text-align: start;
 		@include mixins.flexBox($fd: column, $jc: center, $ai: flex-start, $g: vars.$spacing-mdg);
+		@media (max-width: 991px) {
+			flex: 0 0 100%;
+			max-width: 100%;
+		}
 		h2 {
 			@include mixins.headline(100%, 100%, 270deg, 0, 0, 'bottom', 'left', 30px, 'no');
 			width: fit-content;
 			padding-bottom: vars.$spacing-lg;
+			@media (max-width: 991px) {
+				padding-bottom: vars.$spacing-md;
+			}
 			&::before {
 				background-image: url('../../../../../public/img/icons/about-me/about-line.png');
 			}
@@ -47,6 +87,7 @@
 	}
 	&-skills {
 		@include mixins.flexBox($jc: flex-start, $g: vars.$spacing-sm);
+		flex-wrap: wrap;
 	}
 	&-skill {
 		@include mixins.flexBox($jc: flex-start, $g: vars.$spacing-xs);
@@ -59,7 +100,12 @@
 		flex: 0 0 45%;
 		max-width: 45%;
 		position: relative;
+		width: 100%;
 		@include mixins.flexBox($fd: column, $ai: flex-end, $g: vars.$spacing-lg);
+		@media (max-width: 991px) {
+			flex: 0 0 100%;
+			max-width: 100%;
+		}
 		img {
 			&:not(.sticker) {
 				width: 100%;
@@ -70,11 +116,30 @@
 	&-links {
 		@include mixins.flexBox($jc: flex-end, $g: vars.$spacing-md);
 		padding: 0 vars.$spacing-xs vars.$spacing-xs 0;
+		@media (max-width: 991px) {
+			margin-bottom: vars.$spacing-lg;
+			@media (min-width: 576px) {
+				button {
+					border-color: #000;
+					box-shadow: 4px 4px #000;
+					a {
+						color: #000;
+					}
+				}
+			}
+		}
 	}
 	&-switch {
 		width: 100%;
 		@include mixins.flexBox($jc: flex-end);
 		padding: 0 vars.$spacing-xxl;
+		@media (max-width: 991px) {
+			position: absolute;
+			width: fit-content;
+			bottom: 20px;
+			right: 0;
+			padding: 0 vars.$spacing-md;
+		}
 	}
 	&-next {
 		color: #fff;
@@ -89,11 +154,16 @@
 	width: 120px;
 	height: 120px;
 	transform: translate(50%, -50%);
+	@media (max-width: 991px) {
+		display: none;
+	}
 	&.blank {
 		background-image: url('../../../../../public/img/projects/blank-sticker.png');
 		@include mixins.backgroundImageProperties($bs: contain);
 		@include mixins.flexBox();
-		
+		@media (max-width: 991px) {
+			display: none;
+		}
 		.circular-text {
 			position: absolute;
 			top: 0;

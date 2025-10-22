@@ -8,9 +8,29 @@
 		flex: 0 0 45%;
 		max-width: 45%;
 	}
+	@media (max-width: 991px) {
+		@include mixins.flexBox($fd: column, $ai: center, $jc: flex-start);
+		> * {
+			flex: 0 0 100%;
+			max-width: 100%;
+		}
+	}
 	.intro {
+		@media (max-width: 991px) {
+			margin-bottom: 2.3rem;
+		}
 		h2 {
-			@include mixins.headline(100%, 100%, 270deg, -10px, 0, 'bottom', 'left', 30px, 'no');
+			@include mixins.headline(
+				100%,
+				100%,
+				270deg,
+				-10px,
+				0,
+				'bottom',
+				'left',
+				30px,
+				'no'
+			);
 			width: fit-content;
 			&::before {
 				background-image: url('../../../../public/img/icons/projects/wavy_line.png');
@@ -25,6 +45,9 @@
 .project {
 	@include mixins.flexBox($fd: column, $ai: flex-start, $g: vars.$spacing-sm);
 	margin-bottom: 5rem;
+	@media (max-width: 991px) {
+		margin-bottom: 2.3rem;
+	}
 	&.featured {
 		.project-img-container {
 			@include mixins.flexBox($jc: flex-end, $ai: flex-start);
@@ -35,6 +58,12 @@
 			object-fit: contain;
 			width: 100%;
 			animation: upAndDown 4s ease-out infinite;
+			@media (max-width: 991px) {
+				animation: none;
+			}
+			@media (max-width: 767px) {
+				height: unset;
+			}
 		}
 		.sticker {
 			position: absolute;
@@ -45,23 +74,34 @@
 			background-image: url('../../../../public/img/projects/round-sticker.png');
 			@include mixins.backgroundImageProperties($bs: contain);
 			@include mixins.flexBox($jc: center, $ai: center);
+			@media (max-width: 767px) {
+				width: 120px;
+				height: 120px;
+			}
 		}
 	}
 	&-img {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-		transition: transform .3s ease-in;
+		transition: transform 0.3s ease-in;
+	}
+	.main-btn {
+		align-self: flex-end;
+		margin-top: vars.$spacing-mdg;
 	}
 	&-img-container {
 		height: 400px;
 		width: 100%;
 		overflow: hidden;
 		border-radius: vars.$radius-img;
-		transition: all .3s ease-in;
+		transition: all 0.3s ease-in;
 		position: relative;
+		@media (max-width: 767px) {
+			height: unset;
+		}
 		&::before {
-			content: "";
+			content: '';
 			position: absolute;
 			top: 0;
 			left: 0;
@@ -76,21 +116,27 @@
 			right: 20px;
 			z-index: 2;
 			opacity: 0;
-			transition: all .3s ease-in;
+			transition: all 0.3s ease-in;
 		}
 		&:hover {
-			&::before {
-				background: linear-gradient(180deg, transparent 0%, transparent 50%, rgba(0, 0, 0, .7) 100%);
-			}
-			.project-img {
-				transform: translateY(0) scale(1.1);
-				animation: hoverFeaturedProject .3s ease-in-out;
-				object-fit: cover;
-			}
-			button {
-				opacity: 1;
+			@media (min-width: 992px) {
+				&::before {
+					background: linear-gradient(
+						180deg,
+						transparent 0%,
+						transparent 50%,
+						rgba(0, 0, 0, 0.7) 100%
+					);
+				}
+				.project-img {
+					transform: translateY(0) scale(1.1);
+					animation: hoverFeaturedProject 0.3s ease-in-out;
+					object-fit: cover;
+				}
+				button {
+					opacity: 1;
+				}
 			}
 		}
 	}
-	
 }

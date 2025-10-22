@@ -12,7 +12,6 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-
 	}
 	&-logo {
 		height: 50px;
@@ -48,6 +47,14 @@
 			background: transparent;
 			border: 0;
 			cursor: pointer;
+			background-image: url('../../../../../public/img/icons/menu.png');
+			@include mixins.headerButtonActive();
+			&::before {
+				background-image: url('../../../../../public/img/icons/header-x.png');
+			}
+			&:active {
+				background-image: url('../../../../../public/img/icons/menu-active.png');
+			}
 		}
 		&-menu {
 			position: absolute;
@@ -68,8 +75,19 @@
 		&-head {
 			@include mixins.flexBox($jc: space-between, $ai: center);
 			.close-btn {
-				width: 35px;
+				width: 32px;
+				height: 32px;
 				cursor: pointer;
+				background: transparent;
+				border: 0;
+				background-image: url('../../../../../public/img/icons/close.png');
+				@include mixins.headerButtonActive();
+				&::before {
+					background-image: url('../../../../../public/img/icons/header-active.png');
+				}
+				&:active {
+					background-image: url('../../../../../public/img/icons/close-active.png');
+				}
 			}
 		}
 		&-nav {
@@ -152,6 +170,13 @@
 	}
 	.logo {
 		filter: brightness(0);
+	}
+	@media (max-width: 767px) {
+		.mobile-btn {
+			img {
+				filter: brightness(0);
+			}
+		}
 	}
 	nav {
 		a {
