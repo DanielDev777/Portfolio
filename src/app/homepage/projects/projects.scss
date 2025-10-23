@@ -1,6 +1,10 @@
 @use '../../../vars.scss';
 @use '../../../mixins.scss';
 
+section {
+	padding-bottom: 0;
+}
+
 .projects {
 	@include mixins.flexBox($jc: space-between);
 	flex-wrap: wrap;
@@ -44,11 +48,14 @@
 
 .project {
 	@include mixins.flexBox($fd: column, $ai: flex-start, $g: vars.$spacing-sm);
-	margin-bottom: 5rem;
 	@media (max-width: 991px) {
 		margin-bottom: 2.3rem;
 	}
 	&.featured {
+		margin-bottom: 5rem;
+		@media (max-width: 991px) {
+			margin-bottom: 2.3rem;
+		}
 		.project-img-container {
 			@include mixins.flexBox($jc: flex-end, $ai: flex-start);
 			position: relative;
