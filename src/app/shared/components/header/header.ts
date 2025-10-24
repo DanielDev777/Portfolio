@@ -1,10 +1,11 @@
 import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 import { LangToggle } from '../../lang-toggle/lang-toggle';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
+import { SvgIconComponent } from '../svg-icon/svg-icon';
 
 @Component({
   selector: 'app-header',
-  imports: [LangToggle, TranslatePipe],
+  imports: [LangToggle, TranslatePipe, SvgIconComponent],
   templateUrl: './header.html',
   styleUrl: './header.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

@@ -1,0 +1,40 @@
+@use '../../../../mixins.scss';
+@use '../../../../vars.scss';
+
+footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	* {
+		color: #fff;
+		font-weight: 600;
+	}
+}
+
+app-svg-icon {
+	height: 50px;
+}
+
+.footer {
+	padding-bottom: vars.$spacing-lg;
+	&-logo {
+		@include mixins.flexBox($fd: column, $ai: flex-start, $g: vars.$spacing-sm);
+		padding-bottom: vars.$spacing-mdg;
+	}
+	&-links {
+		@include mixins.flexBox($ai: center, $jc: space-between);
+		a {
+			text-decoration: none;
+			&.legal-link {
+				position: relative;
+				.hover-icon-swoosh {
+					left: -10px;
+				}
+			}
+			&:not(.legal-link) {
+				@include mixins.hoverDisplayWithChild(100%, 100%, 270deg, 0%, 0%, $type: 'hello-btn');
+			}
+		}
+	}
+}

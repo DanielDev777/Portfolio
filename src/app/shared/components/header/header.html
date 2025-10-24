@@ -1,7 +1,7 @@
 <header class="header">
 	<div class="container">
 		<div class="header-row">
-			<img src="/img/logo/logo.PNG" class="header-logo logo" />
+			<app-svg-icon name="logo/logo-filled" [size]="50" cssClass="header-logo logo"></app-svg-icon>
 			<nav>
 				<a href="#about-me">
 					{{ 'header.about-me' | translate }}
@@ -24,13 +24,7 @@
 			<button class="mobile-btn" (click)="toggleMobileMenu()"></button>
 			<div class="mobile-menu" [class.open]="isMobileMenuOpen()">
 				<div class="mobile-head">
-					<img src="/img/logo/logo.PNG" class="header-logo logo" />
-					<!-- <img
-						src="img/icons/close.png"
-						class="close-btn"
-						alt="Close Icon"
-						(click)="closeMobileMenu()"
-					/> -->
+					<app-svg-icon name="logo/logo-filled" [size]="50" cssClass="header-logo logo"></app-svg-icon>
 					<button class="close-btn" (click)="closeMobileMenu()"></button>
 				</div>
 				<div class="mobile-nav">

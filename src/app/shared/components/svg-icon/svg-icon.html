@@ -1,5 +1,6 @@
 <div
 	class="svg-icon"
+	[class]="cssClass()"
 	[style.width]="size() + 'px'"
 	[style.height]="size() + 'px'"
 	[innerHTML]="svgContent() | async"

@@ -1,0 +1,40 @@
+@use '../../../mixins.scss';
+@use '../../../vars.scss';
+
+section {
+	background-image: url('../../../../public/img/contact/contact-bg.png');
+	@include mixins.backgroundImageProperties($bp: top);
+	padding-bottom: 14rem;
+}
+
+.contact {
+	@include mixins.flexBox($ai: flex-start, $jc: space-between);
+	&-content {
+		flex: 0 0 50%;
+		max-width: 50%;
+		@include mixins.headline(100%, 100%, 270deg, 0px, 0, 'bottom', 'right', 30px, 'no');
+		padding-bottom: vars.$spacing-xxl;
+		&::before {
+			background-image: url('../../../../public/img/contact/wavy-arrow.png');
+			height: 100px;
+			width: 50%;
+		}
+		* {
+			color: #fff;
+		}
+		h2 {
+			padding-bottom: vars.$spacing-lg;
+		}
+	}
+	&-info {
+		@include mixins.flexBox(
+			$fd: column,
+			$ai: flex-start,
+			$g: vars.$spacing-md
+		);
+	}
+	&-form-container {
+		flex: 0 0 40%;
+		max-width: 40%;
+	}
+}

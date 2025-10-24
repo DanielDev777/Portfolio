@@ -24,6 +24,7 @@
 					<button (click)="showModal(singleproject)" value="{{ singleproject.id }}" class="main-btn border-black hover--secondary btn-shadow-black show-tablet">{{ 'projects.details' |translate}}</button>
 				</div>
 			}
+			
 			@if (isModalVisible() && selectedProject()) {
 				<app-single-project (close)="hideModal()" (projectChanged)="changeProject($event)" [project]="selectedProject()!"></app-single-project>
 			}

@@ -1,0 +1,96 @@
+@use '../../../../mixins.scss';
+@use '../../../../vars.scss';
+
+form {
+	@include mixins.flexBox($fd: column, $ai: flex-start);
+	* {
+		color: #fff;
+	}
+	.form-group {
+		padding: vars.$spacing-md;
+		width: 100%;
+		&:not(.legal) {
+			&:first-of-type {
+				border-top: 1px solid transparent;
+				&:hover {
+					border-color: vars.$highlight-secondary;
+				}
+			}
+			&:hover {
+				border-bottom-color: vars.$highlight-secondary;
+			}
+			&:has(+ .form-group:not(.legal):hover) {
+				border-bottom-color: vars.$highlight-secondary;
+			}
+			@include mixins.flexBox($fd: column, $ai: flex-start, $g: vars.$spacing-sm);
+			border-bottom: 1px solid vars.$highlight-primary;
+			label {
+				font-size: 1.3rem;
+				font-weight: 600;
+				width: 100%;
+			}
+			input {
+				width: 100%;
+				background-color: transparent;
+				border: 0;
+				&::placeholder {
+					color: #fff;
+				}
+			}
+		}
+		&.legal {
+			@include mixins.flexBox($ai: flex-start, $jc: space-between, $g: vars.$spacing-sm);
+			margin-bottom: vars.$spacing-mdg;
+			padding: vars.$spacing-md 0;
+			label {
+				flex: 0 0 calc(100% - 20px);
+				max-width: calc(100% - 20px);
+				font-weight: 300;
+			}
+			input {
+				appearance: none;
+				position: relative;
+				width: 24px;
+				height: 24px;
+				flex: 0 0 24px;
+				border-radius: 3px;
+				z-index: 1;
+				cursor: pointer;
+				&:hover {
+					background-color: rgba($color: vars.$highlight-secondary, $alpha: .4);
+				}
+				&:checked {
+					&::after {
+						background-image: url(../../../../../public/img/contact/Check.png);
+						@include mixins.backgroundImageProperties($bs: contain);
+					}
+				}
+				&::before {
+					content: "";
+					position: absolute;
+					top: 3px;
+					left: 3px;
+					width: 14px;
+					height: 14px;
+					border: 2px solid vars.$highlight-secondary;
+					border-radius: 3px;
+					z-index: 0;
+				}
+				&::after {
+					content: "";
+					position: absolute;
+					top: 3px;
+					left: 4px;
+					width: 17px;
+					height: 17px;
+					z-index: 2;
+				}
+			}
+		}
+	}
+	button {
+		align-self: flex-end;
+		margin-right: vars.$spacing-md;
+		padding: 12px vars.$spacing-lg;
+	}
+}

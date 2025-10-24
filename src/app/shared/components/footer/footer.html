@@ -1,1 +1,28 @@
-<p>footer works!</p>
+<footer>
+	<div class="container">
+		<div class="footer">
+			<div class="footer-logo">
+				<app-svg-icon name="logo/logo-filled" [size]="50" cssClass="footer-logo logo"></app-svg-icon>
+				<span>{{ 'footer.copyright'|translate}}</span>
+			</div>
+			<div class="footer-links">
+				<a class="legal-link" href="">
+					{{ 'footer.legal'|translate}}
+					<div class="hover-icon-swoosh"></div>
+				</a>
+				<button class="main-btn roll-animate no-border hover--secondary">
+					<a href="">{{ 'footer.github'|translate}}</a>
+					<img class="roll-icon footer-roll" src="/img/icons/socials/github.svg">
+				</button>
+				<button class="main-btn roll-animate no-border hover--secondary">
+					<a href="">{{ 'footer.linkedin'|translate}}</a>
+					<img class="roll-icon footer-roll" src="/img/icons/socials/linked-in.svg">
+				</button>
+				<button class="main-btn roll-animate no-border hover--secondary">
+					<a href="">{{ 'footer.email'|translate}}</a>
+					<img class="roll-icon footer-roll" src="/img/icons/socials/mail.svg">
+				</button>
+			</div>
+		</div>
+	</div>
+</footer>

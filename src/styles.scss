@@ -158,6 +158,58 @@ p {
 // Color //
 
 // Animations //
+.hover-icon- {
+	&circle,
+	&line,
+	&wave,
+	&swoosh {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center;
+	}
+	&circle {
+		background-image: url('../public/img/icons/hover-deco/circle.png');
+		width: 130%;
+		height: 200%;
+		top: -11px;
+		left: -12px;
+		@include mixins.hoverDisplay(50%, 100%, 0deg, 50%, 0%);
+	}
+	&line {
+		background-image: url('../public/img/icons/hover-deco/line.png');
+		background-size: cover;
+		bottom: -(vars.$spacing-sm);
+		top: unset;
+		width: 200%;
+		height: 200%;
+		left: -20px;
+		@include mixins.hoverDisplay(100%, 100%, 270deg, 0%, 0%);
+	}
+	&wave {
+		background-image: url('../public/img/icons/hover-deco/wave.png');
+		background-size: cover;
+		left: -20px;
+		width: 150%;
+		height: 200%;
+		transform: translateY(-25%);
+		@include mixins.hoverDisplay(100%, 100%, 270deg, 0%, 0%);
+	}
+	&swoosh {
+		background-image: url('../public/img/icons/hover-deco/swoosh.png');
+		background-size: cover;
+		width: 120%;
+		height: 200%;
+		left: -5px;
+		top: -(vars.$spacing-sm);
+		@include mixins.hoverDisplay(100%, 100%, 270deg, 0%, 0%);
+	}
+}
+
 .roll-animate {
 	position: relative;
 	.roll-icon {
@@ -166,11 +218,18 @@ p {
 		right: 0;
 		opacity: 0;
 		transition: all .5s ease;
+		&.footer-roll {
+			top: -30px;
+			right: 30%;
+		}
 	}
 	&:hover {
 		.roll-icon {
 			animation: rolling .7s ease-out;
 			opacity: 1;
+			&.footer-roll {
+				right: 0%;
+			}
 		}
 	}
 	&:not(:hover) {

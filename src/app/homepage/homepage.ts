@@ -4,12 +4,13 @@ import { AboutMe } from './about-me/about-me';
 import { Skills } from './skills/skills';
 import { Projects } from './projects/projects';
 import { Testimonials } from './testimonials/testimonials';
+import { Contact } from './contact/contact';
 
 
 
 @Component({
   selector: 'app-homepage',
-  imports: [Hero, AboutMe, Skills, Projects, Testimonials],
+  imports: [Hero, AboutMe, Skills, Projects, Testimonials, Contact],
   templateUrl: './homepage.html',
   styleUrl: './homepage.scss',
 })
