@@ -1,28 +1,54 @@
 <div class="container">
-	<form>
-
+	<div class="sticker-container">
+		<div class="sticker blank">
+			<svg class="circular-text" viewBox="0 0 200 200" width="200" height="200">
+				<defs>
+					<path id="circle" d="M 100, 100 m -82, 0 a 82,82 0 1,1 164,0 a 82,82 0 1,1 -164,0"></path>
+				</defs>
+				<text font-family="Arial" font-size="8" font-weight="bold" fill="currentColor">
+					<textPath href="#circle" startOffset="0%">
+						{{ 'projects.name'|translate }} • {{ 'projects.developer'|translate }} • {{ 'projects.name'|translate }} • {{ 'projects.developer'|translate }} • 
+					</textPath>
+				</text>
+			</svg>
+			<img src="img/logo/logo.PNG" class="center-logo">
+		</div>
+	</div>
+	<form [formGroup]="form" (submit)="onSubmit()">
 		<div class="form-group">
 			<label for="name">{{ 'contact.name-label'|translate}}</label>
-			<input type="text" id="name" name="name" placeholder="{{ 'contact.name-input'|translate}}">
+			<input formControlName="name" type="text" id="name" placeholder="{{ 'contact.name-input'|translate}}">
+			@if (form.get('name')?.invalid && form.get('name')?.touched) {
+				<span>{{ 'contact.name-please'|translate}}</span>
+			}
 		</div>
 		
 		<div class="form-group">
 			<label for="email">{{ 'contact.email-label'|translate}}</label>
-			<input type="text" id="email" name="email" placeholder="{{ 'contact.email-input'|translate}}">
+			<input formControlName="email" type="email" id="email" placeholder="{{ 'contact.email-input'|translate}}">
+			@if (form.get('email')?.invalid && form.get('email')?.touched) {
+				<span>{{ 'contact.email-please'|translate}}</span>
+			}
 		</div>
 		
 		<div class="form-group">
 			<label for="message">{{ 'contact.message-label'|translate}}</label>
-			<input type="text" id="message" name="message" placeholder="{{ 'contact.message-input'|translate}}">
+			<textarea formControlName="message" id="message" placeholder="{{ 'contact.message-input'|translate}}"></textarea>
+			@if (form.get('message')?.invalid && form.get('message')?.touched) {
+				<span>{{ 'contact.message-please'|translate}}</span>
+			}
 		</div>
-		
+
 		<div class="form-group legal">
-			<input type="checkbox" id="legal">
+			<input formControlName="privacy" type="checkbox" id="legal">
 			<label for="legal">
 				{{ 'contact.privacy-one'|translate}}
 				<a href="">{{ 'contact.privacy-link'|translate}}</a>
 				{{ 'contact.privacy-two'|translate}}
 			</label>
+			@if (form.get('privacy')?.invalid && form.get('privacy')?.touched) {
+				<span>{{ 'contact.privacy-please'|translate}}</span>
+			}
 		</div>
 
 		<button class="main-btn roll-animate border-white hover--secondary btn-shadow-white" type="submit" value="Submit">{{ 'contact.send'|translate}}</button>

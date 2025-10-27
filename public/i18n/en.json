@@ -73,7 +73,11 @@
 		"privacy-one": "I've read the ",
 		"privacy-link": "privacy policy",
 		"privacy-two": " and agree to the processing of my data as outlined.",
-		"send": "Send"
+		"send": "Send",
+		"message-please": "Please enter a message",
+		"email-please": "Please enter a valid email address",
+		"name-please": "Please enter your name",
+		"privacy-please": "Please check the box"
 	},
 	"footer": {
 		"copyright": "© Daniel Kersten 2025",

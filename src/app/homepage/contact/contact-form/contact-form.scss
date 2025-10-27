@@ -29,13 +29,20 @@ form {
 				font-weight: 600;
 				width: 100%;
 			}
-			input {
+			input,
+			textarea {
 				width: 100%;
 				background-color: transparent;
 				border: 0;
 				&::placeholder {
 					color: #fff;
 				}
+				&:focus-visible {
+					outline: none;
+				}
+			}
+			span {
+				color: red;
 			}
 		}
 		&.legal {
@@ -92,5 +99,43 @@ form {
 		align-self: flex-end;
 		margin-right: vars.$spacing-md;
 		padding: 12px vars.$spacing-lg;
+	}
+}
+
+.sticker-container {
+	width: 100%;
+	@include mixins.flexBox($ai: flex-end, $jc: flex-end);
+	.sticker {
+		background-image: url('../../../../../public/img/contact/form-sticker.png');
+		@include mixins.backgroundImageProperties($bs: contain);
+		@include mixins.flexBox();
+		width: 170px;
+		position: relative;
+		height: 170px;
+		transform: translateY(40px) rotate(15deg);
+		.circular-text {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			text {
+				fill: vars.$black;
+				font-family: 'Arial', sans-serif;
+				font-weight: bold;
+				textPath {
+					font-size: 14px;
+				}
+			}
+		}
+		
+		.center-logo {
+			width: 55px;
+			height: 55px;
+			object-fit: contain;
+			filter: brightness(0);
+			z-index: 1;
+			position: relative;
+		}
 	}
 }
