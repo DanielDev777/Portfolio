@@ -1,0 +1,45 @@
+@use '../../mixins.scss';
+@use '../../vars.scss';
+
+section {
+	background-image: url('../../../public/img/legal-bg.png');
+	@include mixins.backgroundImageProperties($bp: top, $bs: 100% 400px);
+	padding-bottom: 4.5rem;
+	@media (max-width: 767px) {
+		@include mixins.backgroundImageProperties($bp: top, $bs: 100% 300px);
+		padding-top: 100px;
+	}
+	h1 {
+		font-size: 4rem;
+		color: #fff;
+		@media (max-width: 767px) {
+			font-size: 2rem;
+		}
+	}
+	h2 {
+		font-size: 1.3rem;
+		color: vars.$highlight-secondary;
+	}
+	h3 {
+		font-size: 1.1rem;
+		color: vars.$highlight-secondary;
+	}
+}
+
+.imprint {
+	&-head {
+		padding: 0 vars.$spacing-md 8rem;
+	}
+	&-body {
+		&-head{
+			@include mixins.flexBox($fd: column, $jc: flex-start, $ai: flex-start, $g: vars.$spacing-smd);
+			margin-bottom: 24px;
+			ul {
+				padding-left: vars.$spacing-md;
+			}
+		} 
+		&-content {
+			@include mixins.flexBox($fd: column, $jc: flex-start, $g: 24px);
+		}
+	}
+}

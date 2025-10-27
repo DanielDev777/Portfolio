@@ -1,15 +1,17 @@
-<footer>
+<footer [class.footer-legal]="isLegalNoticePage()">
 	<div class="container">
 		<div class="footer">
-			<div class="footer-logo">
-				<app-svg-icon name="logo/logo-filled" [size]="50" cssClass="footer-logo logo"></app-svg-icon>
-				<span>{{ 'footer.copyright'|translate}}</span>
-			</div>
 			<div class="footer-links">
-				<a class="legal-link" href="">
-					{{ 'footer.legal'|translate}}
-					<div class="hover-icon-swoosh"></div>
-				</a>
+				<div class="footer-logo">
+					<app-svg-icon name="logo/logo-filled" [size]="50" cssClass="footer-logo logo"></app-svg-icon>
+					<div class="footer-logo-text">
+						<span>{{ 'footer.copyright'|translate}}</span>
+						<a class="legal-link" href="/legal-notice">
+							{{ 'footer.legal'|translate}}
+							<div class="hover-icon-swoosh"></div>
+						</a>
+					</div>
+				</div>
 				<button class="main-btn roll-animate no-border hover--secondary">
 					<a href="">{{ 'footer.github'|translate}}</a>
 					<img class="roll-icon footer-roll" src="/img/icons/socials/github.svg">

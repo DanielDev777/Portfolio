@@ -7,6 +7,7 @@ interface ContactPayload {
   name: string;
   email: string;
   message: string;
+  privacy: boolean;
 }
 
 @Component({
@@ -27,7 +28,7 @@ export class ContactForm {
     name: ['', [Validators.required]],
     email: ['', [Validators.required, Validators.email]],
     message: ['', [Validators.required]],
-	privacy: [false, [Validators.required]]
+	privacy: [false, [Validators.requiredTrue]]
   });
 
   onSubmit() {

@@ -35,15 +35,15 @@ section {
 			position: relative;
 			&::before {
 				background-image: url('../../../../public/img/icons/skills/skill-circle.png');
-				width: 120% !important;
-				height: 120% !important;
+				width: 110% !important;
+				height: 110% !important;
 			}
 			@include mixins.headline(
 				0%,
 				100%,
 				45deg,
-				-5px,
-				-20px,
+				0,
+				-15px,
 				'top',
 				'left',
 				-20px,
@@ -103,7 +103,7 @@ section {
 			row-gap: vars.$spacing-md;
 		}
 		@media (max-width: 575px) {
-			margin-bottom: 0;
+			margin-bottom: 20px;
 		}
 		@media (max-width: 375px) {
 			margin-bottom: vars.$spacing-lg;

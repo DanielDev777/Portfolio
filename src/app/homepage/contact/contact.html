@@ -1,12 +1,43 @@
 <section>
 	<div class="container">
 		<div class="contact">
+			<div class="sticker-container">
+				<div class="sticker blank">
+					<svg
+						class="circular-text"
+						viewBox="0 0 200 200"
+						width="200"
+						height="200"
+					>
+						<defs>
+							<path
+								id="circle"
+								d="M 100, 100 m -82, 0 a 82,82 0 1,1 164,0 a 82,82 0 1,1 -164,0"
+							></path>
+						</defs>
+						<text
+							font-family="Arial"
+							font-size="8"
+							font-weight="bold"
+							fill="currentColor"
+						>
+							<textPath href="#circle" startOffset="0%">
+								{{ 'projects.name' | translate }} •
+								{{ 'projects.developer' | translate }} •
+								{{ 'projects.name' | translate }} •
+								{{ 'projects.developer' | translate }} •
+							</textPath>
+						</text>
+					</svg>
+					<img src="img/logo/logo.PNG" class="center-logo" />
+				</div>
+			</div>
 			<div class="contact-content">
-				<p>{{ 'contact.subline'|translate }}</p>
-				<h2>{{ 'contact.headline'|translate }}</h2>
+				<p>{{ 'contact.subline' | translate }}</p>
+				<h2>{{ 'contact.headline' | translate }}</h2>
 				<div class="contact-info">
-					<p>{{ 'contact.info'|translate }}</p>
-					<p>{{ 'contact.interest'|translate }}</p>
+					<p>{{ 'contact.info' | translate }}</p>
+					<p>{{ 'contact.interest' | translate }}</p>
 				</div>
 			</div>
 			<div class="contact-form-container">

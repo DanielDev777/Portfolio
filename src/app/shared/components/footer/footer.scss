@@ -20,21 +20,42 @@ app-svg-icon {
 	padding-bottom: vars.$spacing-lg;
 	&-logo {
 		@include mixins.flexBox($fd: column, $ai: flex-start, $g: vars.$spacing-sm);
-		padding-bottom: vars.$spacing-mdg;
-	}
-	&-links {
-		@include mixins.flexBox($ai: center, $jc: space-between);
-		a {
-			text-decoration: none;
-			&.legal-link {
+		padding-bottom: vars.$spacing-sm;
+		@media (max-width: 575px) {
+			align-items: flex-end;
+			flex: 0 0 100%;
+			max-width: 100%;
+			margin-bottom: vars.$spacing-md;
+		}
+		&-text {
+			@include mixins.flexBox($fd: column, $ai: flex-start, $g: vars.$spacing-md);
+			@media (max-width: 575px) {
+				align-items: flex-end;
+			}
+			.legal-link {
 				position: relative;
+				text-decoration: none;
 				.hover-icon-swoosh {
 					left: -10px;
 				}
 			}
+		}
+	}
+	&-links {
+		@include mixins.flexBox($ai: flex-end, $jc: space-between);
+		flex-wrap: wrap;
+		a {
+			text-decoration: none;
 			&:not(.legal-link) {
 				@include mixins.hoverDisplayWithChild(100%, 100%, 270deg, 0%, 0%, $type: 'hello-btn');
 			}
 		}
+	}
+}
+
+.footer-legal {
+	position: unset;
+	* {
+		color: #000;
 	}
 }

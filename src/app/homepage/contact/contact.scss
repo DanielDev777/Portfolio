@@ -9,11 +9,35 @@ section {
 
 .contact {
 	@include mixins.flexBox($ai: flex-start, $jc: space-between);
+	@media (max-width: 991px) {
+		@include mixins.flexBox($fd: column, $ai: center, $jc: center);
+	}
+	@media (max-width: 575px) {
+		padding-bottom: vars.$spacing-xxl;
+	}
 	&-content {
 		flex: 0 0 50%;
 		max-width: 50%;
-		@include mixins.headline(100%, 100%, 270deg, 0px, 0, 'bottom', 'right', 30px, 'no');
+		@include mixins.headline(
+			100%,
+			100%,
+			270deg,
+			0px,
+			0,
+			'bottom',
+			'right',
+			30px,
+			'no'
+		);
 		padding-bottom: vars.$spacing-xxl;
+		@media (max-width: 991px) {
+			flex: 0 0 100%;
+			max-width: 100%;
+			padding-bottom: 40px;
+			&::before {
+				content: unset;
+			}
+		}
 		&::before {
 			background-image: url('../../../../public/img/contact/wavy-arrow.png');
 			height: 100px;
@@ -36,5 +60,74 @@ section {
 	&-form-container {
 		flex: 0 0 40%;
 		max-width: 40%;
+		@media (max-width: 991px) {
+			flex: 0 0 100%;
+			max-width: 100%;
+			width: 100%;
+			padding-bottom: vars.$spacing-md;
+			@include mixins.headline(
+				100%,
+				100%,
+				270deg,
+				0px,
+				0,
+				'bottom',
+				'left',
+				30px,
+				'no'
+			);
+			&::before {
+				background-image: url('../../../../public/img/contact/wavy-arrow.png');
+				height: 50px;
+				width: 50%;
+				transform: translateY(-25%);
+			}
+		}
+	}
+}
+
+.sticker-container {
+	width: 100%;
+	display: none;
+	@media (max-width: 991px) {
+		@include mixins.flexBox($ai: flex-end, $jc: flex-end);
+		padding: 0 vars.$spacing-md;
+	}
+	.sticker {
+		background-image: url('../../../../public/img/contact/form-sticker.png');
+		@include mixins.backgroundImageProperties($bs: contain);
+		@include mixins.flexBox();
+		width: 170px;
+		position: relative;
+		height: 170px;
+		transform: translateY(0) rotate(15deg);
+		@media (max-width: 575px) {
+			width: 120px;
+			height: 120px;
+		}
+		.circular-text {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			text {
+				fill: vars.$black;
+				font-family: 'Arial', sans-serif;
+				font-weight: bold;
+				textPath {
+					font-size: 14px;
+				}
+			}
+		}
+
+		.center-logo {
+			width: 55px;
+			height: 55px;
+			object-fit: contain;
+			filter: brightness(0);
+			z-index: 1;
+			position: relative;
+		}
 	}
 }
