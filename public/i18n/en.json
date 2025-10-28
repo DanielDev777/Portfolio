@@ -77,7 +77,9 @@
 		"message-please": "Please enter a message",
 		"email-please": "Please enter a valid email address",
 		"name-please": "Please enter your name",
-		"privacy-please": "Please check the box"
+		"privacy-please": "Please check the box",
+		"close": "Close",
+		"success": "Your inquiry was sent successfully!"
 	},
 	"footer": {
 		"copyright": "© Daniel Kersten 2025",

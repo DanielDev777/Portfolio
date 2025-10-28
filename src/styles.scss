@@ -38,7 +38,8 @@ body {
 		font-size: 1rem;
 	}
 }
-body:has(.project-modal) {
+body:has(.project-modal),
+body:has(.success-modal) {
 	overflow: hidden;
 }
 .container {

@@ -30,7 +30,7 @@
 	</div>
 </div>
 <form [formGroup]="form" (submit)="onSubmit()">
-	<div class="form-group">
+	<div class="form-group" [class.error]="form.get('name')?.invalid && form.get('name')?.touched">
 		<label for="name">{{ 'contact.name-label' | translate }}</label>
 		<input
 			formControlName="name"
@@ -43,7 +43,7 @@
 		}
 	</div>
 
-	<div class="form-group">
+	<div class="form-group" [class.error]="form.get('email')?.invalid && form.get('email')?.touched">
 		<label for="email">{{ 'contact.email-label' | translate }}</label>
 		<input
 			formControlName="email"
@@ -56,7 +56,7 @@
 		}
 	</div>
 
-	<div class="form-group">
+	<div class="form-group" [class.error]="form.get('message')?.invalid && form.get('message')?.touched">
 		<label for="message">{{ 'contact.message-label' | translate }}</label>
 		<textarea
 			formControlName="message"
@@ -89,3 +89,14 @@
 		{{ 'contact.send' | translate }}
 	</button>
 </form>
+
+@if (modalOpen()) {
+	<div class="success-modal">
+		<div class="success-modal__inner">
+			<p>{{ 'contact.success' | translate }}</p>
+			<button class="main-btn border-black hover--secondary btn-shadow-black" (click)="closeSuccessModal()">
+				{{ 'contact.close' | translate }}
+			</button>
+		</div>
+	</div>
+}

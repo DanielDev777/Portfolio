@@ -6,22 +6,22 @@
 					<app-svg-icon name="logo/logo-filled" [size]="50" cssClass="footer-logo logo"></app-svg-icon>
 					<div class="footer-logo-text">
 						<span>{{ 'footer.copyright'|translate}}</span>
-						<a class="legal-link" href="/legal-notice">
+						<a class="legal-link" routerLink="/legal-notice">
 							{{ 'footer.legal'|translate}}
 							<div class="hover-icon-swoosh"></div>
 						</a>
 					</div>
 				</div>
 				<button class="main-btn roll-animate no-border hover--secondary">
-					<a href="https://github.com/DanielDev777">{{ 'footer.github'|translate}}</a>
+					<a target="_blank" href="https://github.com/DanielDev777">{{ 'footer.github'|translate}}</a>
 					<img class="roll-icon footer-roll" src="/img/icons/socials/github.svg">
 				</button>
 				<button class="main-btn roll-animate no-border hover--secondary">
-					<a href="https://de.linkedin.com/in/kersten-daniel">{{ 'footer.linkedin'|translate}}</a>
+					<a target="_blank" href="https://de.linkedin.com/in/kersten-daniel">{{ 'footer.linkedin'|translate}}</a>
 					<img class="roll-icon footer-roll" src="/img/icons/socials/linked-in.svg">
 				</button>
 				<button class="main-btn roll-animate no-border hover--secondary">
-					<a href="mailto:daniel@dev-kersten.de">{{ 'footer.email'|translate}}</a>
+					<a target="_blank" href="mailto:daniel@dev-kersten.de">{{ 'footer.email'|translate}}</a>
 					<img class="roll-icon footer-roll" src="/img/icons/socials/mail.svg">
 				</button>
 			</div>

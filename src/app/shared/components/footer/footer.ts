@@ -1,12 +1,12 @@
 import { Component, inject, ChangeDetectionStrategy, signal } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+import { Router, NavigationEnd, RouterLink } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { SvgIconComponent } from '../svg-icon/svg-icon';
 import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
 	selector: 'app-footer',
-	imports: [SvgIconComponent, TranslatePipe],
+	imports: [SvgIconComponent, TranslatePipe, RouterLink],
 	templateUrl: './footer.html',
 	styleUrl: './footer.scss',
 	changeDetection: ChangeDetectionStrategy.OnPush

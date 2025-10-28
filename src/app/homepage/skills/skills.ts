@@ -68,7 +68,6 @@ export class Skills {
         const isValidDirection = x < 0 || y > 0;
         
         if (isValidDirection && this.getMagnitude(x, y) > 0) {
-            // Always move diagonally to bottom-left based on cursor distance
             const magnitude = this.getMagnitude(x, y);
             const constrainedX = -Math.abs(magnitude * 0.7);
             const constrainedY = Math.abs(magnitude * 0.7);
@@ -90,13 +89,6 @@ export class Skills {
 
     private getMagnitude(x: number, y: number): number {
         return Math.sqrt(x * x + y * y);
-    }
-
-    private setElementPosition(element: HTMLElement, x: number, y: number): void {
-        const magnitude = this.getMagnitude(x, y);
-        const constrainedX = -Math.abs(magnitude * 0.7);
-        const constrainedY = Math.abs(magnitude * 0.7);
-        element.style.transform = `translate3d(${constrainedX}px, ${constrainedY}px, 0)`;
     }
 
     private resetElementPosition(element: HTMLElement): void {
