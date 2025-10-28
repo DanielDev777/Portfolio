@@ -31,6 +31,18 @@ section {
 		padding: 0 vars.$spacing-md 8rem;
 	}
 	&-body {
+		.back-btn {
+			display: none;
+			@media (max-width: 575px) {
+				@include mixins.flexBox($jc: flex-start, $g: vars.$spacing-xs);
+				padding-bottom: vars.$spacing-md;
+				cursor: pointer;
+				text-decoration: none;
+				img {
+					width: 35px;
+				}
+			}
+		}
 		&-head{
 			@include mixins.flexBox($fd: column, $jc: flex-start, $ai: flex-start, $g: vars.$spacing-smd);
 			margin-bottom: 24px;

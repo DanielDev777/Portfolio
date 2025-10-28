@@ -82,7 +82,7 @@ export const PROJECTS_DATA: Project[] = [
 			en: '3 weeks'
 		},
 		github: 'https://github.com/DanielDev777/El-Pollo-Loco',
-		live: '',
+		live: '/el_pollo_loco',
 		skills: [
 			{
 				name: 'JavaScript',
@@ -116,7 +116,7 @@ export const PROJECTS_DATA: Project[] = [
 			en: '1 week'
 		},
 		github: 'https://github.com/DanielDev777/Pokedex',
-		live: '',
+		live: '/pokedex',
 		skills: [
 			{
 				name: 'JavaScript',

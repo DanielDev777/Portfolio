@@ -32,6 +32,7 @@ html {
 }
 body {
 	margin: 0;
+	scroll-behavior: smooth;
 	* {
 		font-family: 'Bricolage Grotesque', sans-serif;
 		font-size: 1rem;
@@ -111,7 +112,7 @@ p {
 	border-radius: vars.$radius-pill;
 	width: fit-content;
 	background: transparent;
-	transition: all .3s ease;
+	transition: all .2s ease;
 	cursor: pointer;
 }
 .btn-shadow-white {
