@@ -28,6 +28,8 @@ section {
 
 .imprint {
 	&-head {
+		max-width: 1400px;
+		margin: 0 auto;
 		padding: 0 vars.$spacing-md 8rem;
 	}
 	&-body {

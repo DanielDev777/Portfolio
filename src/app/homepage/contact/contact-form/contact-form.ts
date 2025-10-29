@@ -23,7 +23,7 @@ export class ContactForm {
 
 	private readonly MAIL_ENDPOINT =
 		'https://daniel.dev-kersten.de/sendMail.php';
-	private readonly MAIL_TEST = true;
+	private readonly MAIL_TEST = false;
 
 	modalOpen = signal(false);
 
@@ -33,17 +33,16 @@ export class ContactForm {
 			email: ['', [Validators.required, Validators.email]],
 			message: ['', [Validators.required, Validators.minLength(10)]],
 			privacy: [false, [Validators.requiredTrue]]
-		},
-		{ updateOn: 'blur' }
+		}
 	);
 
 	onSubmit() {
-		if (this.form.valid) {
-			this.openSuccessModal();
-		}
 		if (this.MAIL_TEST) {
 			this.form.reset();
 			return;
+		}
+		if (this.form.valid) {
+			this.openSuccessModal();
 		}
 		this.sendMail();
 	}
