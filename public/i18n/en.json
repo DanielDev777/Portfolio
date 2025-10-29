@@ -20,7 +20,7 @@
 	"about": {
 		"who": "Who's Daniel?",
 		"about-me": "About me",
-		"info": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem blanditiis facilis reiciendis exercitationem veniam quasi quia eum repudiandae, illum repellat eligendi voluptate repellendus id vero laboriosam, nemo accusamus nisi optio.",
+		"info": "Hi — I’m Daniel, a web developer with a strong focus on frontend technologies and experience working with WordPress, Shopify, and Shopware. I enjoy building clean, user-friendly web solutions and continuously refining my skills in UI/UX and backend development. My goal is to keep growing as a developer, learning new tools and approaches to create well-crafted, efficient, and engaging digital experiences.",
 		"subline": "Let's collaborate and build something remarkable together!",
 		"contact": "Let's talk",
 		"based": "Based in Hamburg",
@@ -30,7 +30,7 @@
 	"skills": {
 		"stack": "MY STACK",
 		"skills": "Skill set",
-		"introduction": "A short introduction of your skills. Highlight your experience of using different front-end technologies and emphasise your openness to learning and adapting to new technologies.",
+		"introduction": "I develop responsive, dynamic frontends using modern JavaScript frameworks and tools. With experience in Shopify, Shopware, WordPress, Angular, and REST APIs, I focus on writing efficient, maintainable code and continuously expanding my skills.",
 		"next": "Also, I'm interested in diving into:",
 		"react": "React",
 		"laravel": "Laravel",
@@ -40,7 +40,7 @@
 	"projects": {
 		"subline": "MY CRAFT",
 		"headline": "Projects",
-		"info": "Encourage people to take a look and interact with your projects. Highlight your approach to creating responsive, user-friendly projects with efficient code.",
+		"info": "Take a look at some of my recent projects — including a Pokédex built with the PokéAPI, a browser-based jump-and-run game, and a Kanban-style project manager made with Angular. Each demonstrates my approach to building interactive, user-friendly solutions with clean and thoughtful code.",
 		"description": "Description",
 		"implementation": "Implementation Details",
 		"duration": "Duration: ",
@@ -62,8 +62,8 @@
 	"contact": {
 		"subline": "CONTACT ME",
 		"headline": "Ready to work together?",
-		"info": "Encourage people to contact you and describe what role you are interested in. Express confidence in your ability to make a meaningful contribution to a team through your expertise and enthusiasm for improving your skills.",
-		"interest": "Show interest in contributing to a new project, while highlighting the value and skills you can bring to the table.",
+		"info": "I’m always open to new opportunities where I can contribute my skills and continue growing as a developer. With experience in building responsive frontends and a solid understanding of modern web technologies, I enjoy tackling challenges that require creativity and clean, maintainable solutions.",
+		"interest": "If you’re looking for someone eager to learn, collaborate, and bring value to your next project, I’d love to hear from you. Let’s connect and create something great together.",
 		"name-label": "What's your name?",
 		"name-input": "Your name goes here",
 		"email-label": "What's your email?",
