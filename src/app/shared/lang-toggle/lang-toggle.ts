@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject, signal, effect } from '@angular/core';
 import {
 	TranslatePipe,
 	TranslateDirective,
@@ -14,11 +14,19 @@ import {
 export class LangToggle {
 	private translate = inject(TranslateService);
 
-	selectedLang = signal('en');
+	selectedLang = signal<string>(this.getSavedLanguage());
 
 	constructor() {
 		this.translate.setFallbackLang('en');
-        this.translate.use('en');
+		this.translate.use(this.selectedLang());
+		
+		effect(() => {
+			localStorage.setItem('selectedLanguage', this.selectedLang());
+		});
+	}
+
+	private getSavedLanguage(): string {
+		return localStorage.getItem('selectedLanguage') || 'en';
 	}
 
 	useLanguage(language: string): void {

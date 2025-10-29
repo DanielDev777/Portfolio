@@ -3,8 +3,9 @@
 
 section {
 	background-image: url('../../../public/img/legal-bg.png');
-	@include mixins.backgroundImageProperties($bp: top, $bs: 100% 400px);
 	padding-bottom: 4.5rem;
+	min-height: calc(100vh - 184px);
+	@include mixins.backgroundImageProperties($bp: top, $bs: 100% 400px);
 	@media (max-width: 767px) {
 		@include mixins.backgroundImageProperties($bp: top, $bs: 100% 300px);
 		padding-top: 100px;

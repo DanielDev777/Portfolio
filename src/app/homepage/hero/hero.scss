@@ -14,6 +14,9 @@ section {
 		margin: 0 auto;
 		position: relative;
 		@include mixins.flexBox($fd:column, $jc: center, $ai: unset);
+		@media (max-width: 575px) {
+			padding-bottom: vars.$spacing-lg;
+		}
 		&-polaroid {
 			background-color: vars.$white;
 			padding: 16px;
@@ -29,7 +32,7 @@ section {
 			@media (max-width: 575px) {
 				position: unset;
 				align-self: center;
-				margin-top: 20px;
+				margin-top: vars.$spacing-md;
 			}
 			&:hover {
 				img {

@@ -74,6 +74,10 @@ section {
 		img {
 			width: 100%;
 			object-fit: contain;
+			@media (max-width: 375px) {
+				object-fit: unset;
+				height: 300px;
+			}
 		}
 		@media (max-width: 1200px) {
 			width: 100%;

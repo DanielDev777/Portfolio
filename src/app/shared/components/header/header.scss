@@ -8,6 +8,10 @@
 	background: transparent;
 	width: 100%;
 	padding: 20px 0;
+	z-index: 5;
+	@media (hover: none) and (max-width: 575px) {
+		position: fixed;
+	}
 	&-row {
 		display: flex;
 		align-items: center;
@@ -63,11 +67,11 @@
 			background-image: url('../../../../../public/img/hero/01_Hero.png');
 			@include mixins.backgroundImageProperties();
 			z-index: 1;
-			height: 70vh;
+			height: fit-content;
 			width: 100%;
-			transform: translateY(-110%);
+			transform: translateY(-150%);
 			transition: all 0.5s ease;
-			padding: 20px;
+			padding: vars.$spacing-md vars.$spacing-md vars.$spacing-lg;
 			&.open {
 				transform: translateY(0%);
 			}
@@ -92,7 +96,13 @@
 		}
 		&-nav {
 			padding: 100px 0 20px;
-			@include mixins.flexBox($fd: column, $g: 50px);
+			@include mixins.flexBox($fd: column, $g: vars.$spacing-mdg);
+			@media (max-width: 575px) and (hover: none) {
+				padding: vars.$spacing-md 0;
+				> a {
+					font-size: 1.2rem;
+				}
+			}
 			> * {
 				position: relative;
 				color: vars.$white;

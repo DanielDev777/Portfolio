@@ -36,7 +36,12 @@ app-svg-icon {
 				position: relative;
 				text-decoration: none;
 				.hover-icon-swoosh {
-					left: -10px;
+					left: -15px;
+					top: 0;
+					background-position: bottom;
+					@media (max-width: 575px) {
+						display: none;
+					}
 				}
 			}
 		}

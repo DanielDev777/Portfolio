@@ -29,7 +29,7 @@
 					<app-svg-icon name="logo/logo-filled" [size]="50" cssClass="header-logo logo"></app-svg-icon>
 					<button class="close-btn" (click)="closeMobileMenu()"></button>
 				</div>
-				<div class="mobile-nav">
+				<div class="mobile-nav" (click)="closeMobileMenu()">
 					<a href="#about-me">
 						{{ 'header.about-me' | translate }}
 						<div class="hover-icon-circle"></div>
