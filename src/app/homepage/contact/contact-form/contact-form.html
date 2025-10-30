@@ -72,7 +72,7 @@
 		<input formControlName="privacy" type="checkbox" id="legal" />
 		<label for="legal">
 			{{ 'contact.privacy-one' | translate }}
-			<a routerLink="/legal-notice">{{ 'contact.privacy-link' | translate }}</a>
+			<a routerLink="/privacy-policy">{{ 'contact.privacy-link' | translate }}</a>
 			{{ 'contact.privacy-two' | translate }}
 		</label>
 		@if (form.get('privacy')?.invalid && form.get('privacy')?.touched) {
