@@ -13,13 +13,13 @@ import { TranslatePipe } from '@ngx-translate/core';
 })
 export class Footer {
 	private readonly router = inject(Router);
-	isLegalNoticePage = signal(false);
+	isLegalPage = signal(false);
 
 	constructor() {
 		this.router.events
 			.pipe(filter(event => event instanceof NavigationEnd))
 			.subscribe(() => {
-				this.isLegalNoticePage.set(this.router.url.includes('legal-notice'));
+				this.isLegalPage.set(this.router.url.includes('legal-notice') || this.router.url.includes('privacy-policy'));
 			});
 	}
 }

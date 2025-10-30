@@ -1,4 +1,4 @@
-<footer [class.footer-legal]="isLegalNoticePage()">
+<footer [class.footer-legal]="isLegalPage()">
 	<div class="container">
 		<div class="footer">
 			<div class="footer-links">
@@ -10,11 +10,15 @@
 							{{ 'footer.legal'|translate}}
 							<div class="hover-icon-swoosh"></div>
 						</a>
+						<a class="legal-link privacy" routerLink="/privacy-policy">
+							{{ 'privacy.headline'|translate}}
+							<div class="hover-icon-wave"></div>
+						</a>
 					</div>
 				</div>
 				<button class="main-btn roll-animate no-border hover--secondary">
 					<a target="_blank" href="https://github.com/DanielDev777">{{ 'footer.github'|translate}}</a>
-					@if (isLegalNoticePage()) {
+					@if (isLegalPage()) {
 						<img class="roll-icon footer-roll" src="/img/icons/socials/github-black.svg">
 					} @else {
 						<img class="roll-icon footer-roll" src="/img/icons/socials/github.svg">
@@ -22,7 +26,7 @@
 				</button>
 				<button class="main-btn roll-animate no-border hover--secondary">
 					<a target="_blank" href="https://de.linkedin.com/in/kersten-daniel">{{ 'footer.linkedin'|translate}}</a>
-					@if (isLegalNoticePage()) {
+					@if (isLegalPage()) {
 						<img class="roll-icon footer-roll" src="/img/icons/socials/linked-in-black.svg">
 					} @else {
 						<img class="roll-icon footer-roll" src="/img/icons/socials/linked-in.svg">
@@ -30,7 +34,7 @@
 				</button>
 				<button class="main-btn roll-animate no-border hover--secondary">
 					<a target="_blank" href="mailto:daniel@dev-kersten.de">{{ 'footer.email'|translate}}</a>
-					@if (isLegalNoticePage()) {
+					@if (isLegalPage()) {
 						<img class="roll-icon footer-roll" src="/img/icons/socials/mail-black.svg">
 					} @else {
 						<img class="roll-icon footer-roll" src="/img/icons/socials/mail.svg">

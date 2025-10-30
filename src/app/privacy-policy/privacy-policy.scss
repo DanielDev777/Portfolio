@@ -4,7 +4,7 @@
 section {
 	background-image: url('../../../public/img/legal-bg.png');
 	padding-bottom: 4.5rem;
-	min-height: calc(100vh - 184px);
+	min-height: calc(100vh - 226px);
 	@include mixins.backgroundImageProperties($bp: top, $bs: 100% 400px);
 	@media (max-width: 767px) {
 		@include mixins.backgroundImageProperties($bp: top, $bs: 100% 300px);
@@ -20,41 +20,32 @@ section {
 	h2 {
 		font-size: 1.3rem;
 		color: vars.$highlight-secondary;
+		padding: vars.$spacing-md 0;
 	}
 	h3 {
 		font-size: 1.1rem;
 		color: vars.$highlight-secondary;
+		padding: vars.$spacing-smd 0;
 	}
 }
 
-.imprint {
+.privacy {
 	&-head {
 		max-width: 1440px;
 		margin: 0 auto;
 		padding: 0 vars.$spacing-smd 8rem;
 	}
-	&-body {
-		.back-btn {
-			display: none;
-			@media (max-width: 575px) {
-				@include mixins.flexBox($jc: flex-start, $g: vars.$spacing-xs);
-				padding-bottom: vars.$spacing-md;
-				cursor: pointer;
-				text-decoration: none;
-				img {
-					width: 35px;
-				}
+	.back-btn {
+		display: none;
+		color: #000;
+		@media (max-width: 575px) {
+			@include mixins.flexBox($jc: flex-start, $g: vars.$spacing-xs);
+			padding-bottom: vars.$spacing-md;
+			cursor: pointer;
+			text-decoration: none;
+			img {
+				width: 35px;
 			}
-		}
-		&-head{
-			@include mixins.flexBox($fd: column, $jc: flex-start, $ai: flex-start, $g: vars.$spacing-smd);
-			margin-bottom: 24px;
-			ul {
-				padding-left: vars.$spacing-md;
-			}
-		} 
-		&-content {
-			@include mixins.flexBox($fd: column, $jc: flex-start, $g: 24px);
 		}
 	}
 }

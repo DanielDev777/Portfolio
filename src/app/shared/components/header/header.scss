@@ -53,6 +53,7 @@
 			cursor: pointer;
 			background-image: url('../../../../../public/img/icons/menu.png');
 			@include mixins.headerButtonActive();
+			background-color: #1a1a1a;
 			&::before {
 				background-image: url('../../../../../public/img/icons/header-x.png');
 			}

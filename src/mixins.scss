@@ -128,10 +128,11 @@
 	background-size: $bs;
 }
 @mixin headerButtonActive() {
-	width: 32px;	
-	height: 32px;	
+	width: 40px;	
+	height: 40px;	
 	padding: 0;
-	@include backgroundImageProperties($bp: center, $bs: contain);
+	@include backgroundImageProperties($bp: center, $bs: auto);
+	border-radius: 7px;
 	position: relative;
 	&::before {
 		content: "";
