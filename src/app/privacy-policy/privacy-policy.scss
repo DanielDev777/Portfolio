@@ -19,13 +19,18 @@ section {
 	}
 	h2 {
 		font-size: 1.3rem;
-		color: vars.$highlight-secondary;
 		padding: vars.$spacing-md 0;
 	}
 	h3 {
 		font-size: 1.1rem;
-		color: vars.$highlight-secondary;
 		padding: vars.$spacing-smd 0;
+	}
+	h4 {
+		padding: vars.$spacing-sm 0;
+	}
+	* {
+		// hyphens: auto;
+		word-break: break-all;
 	}
 }
 

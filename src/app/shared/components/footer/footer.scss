@@ -46,6 +46,9 @@ app-svg-icon {
 					}
 					&wave {
 						width: 120%;
+						@media (max-width: 575px) {
+							display: none;
+						}
 					}
 				}
 			}
