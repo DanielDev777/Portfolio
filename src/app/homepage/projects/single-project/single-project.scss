@@ -8,10 +8,9 @@
 	width: 100%;
 	height: 100vh;
 	background: #1D1D1D url(../../../../../public/img/projects/notebook_bg.png);
-	@include mixins.backgroundImageProperties($bs: cover, $bp: left);
 	z-index: 5;
 	overflow-y: auto;
-	
+	@include mixins.backgroundImageProperties($bs: cover, $bp: left);
 	@media (max-width: 1400px) {
 		@include mixins.backgroundImageProperties($bs: cover, $bp: 40% center);
 	}

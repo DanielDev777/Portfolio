@@ -36,15 +36,15 @@ export const PROJECTS_DATA: Project[] = [
 			en: 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.'
 		},
 		details: {
-			de: 'Short text that describes your role or the workflow for this specific project. Let a recruiter know more about your knowledge and ability to work independently or collaboratively in a structured way',
-			en: 'Short text that describes your role or the workflow for this specific project. Let a recruiter know more about your knowledge and ability to work independently or collaboratively in a structured way'
+			de: 'Als Full-Stack Frontend-Entwickler implementierte ich das Authentifizierungssystem, die Firebase-Integration und das Drag-and-Drop Task-Board für diese Angular-Anwendung. Ich war verantwortlich für responsives UI/UX-Design, die Entwicklung wiederverwendbarer Komponenten und umfassende Code-Dokumentation.',
+			en: 'As a Full-Stack Frontend Developer, I implemented the authentication system, Firebase integration, and drag-and-drop task board for this Angular application. I was responsible for responsive UI/UX design, reusable component development, and comprehensive code documentation.'
 		},
 		duration: {
 			de: '5 Wochen',
 			en: '5 weeks'
 		},
-		github: '',
-		live: '',
+		github: 'https://github.com/DanielDev777/join',
+		live: 'https://join.dev-kersten.de/',
 		skills: [
 			{
 				name: 'CSS',
