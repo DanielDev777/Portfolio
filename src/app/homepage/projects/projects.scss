@@ -47,15 +47,14 @@ section {
 }
 
 .project {
+	&:not(:last-of-type, :nth-of-type(5)) {
+		margin-bottom: 5rem;
+	}
 	@include mixins.flexBox($fd: column, $ai: flex-start, $g: vars.$spacing-sm);
 	@media (max-width: 991px) {
 		margin-bottom: 2.3rem;
 	}
 	&.featured {
-		margin-bottom: 5rem;
-		@media (max-width: 991px) {
-			margin-bottom: 2.3rem;
-		}
 		.project-img-container {
 			@include mixins.flexBox($jc: flex-end, $ai: flex-start);
 			position: relative;

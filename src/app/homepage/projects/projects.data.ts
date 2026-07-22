@@ -131,5 +131,81 @@ export const PROJECTS_DATA: Project[] = [
 				img: 'img/icons/skills/css.png'
 			}
 		]
+	},
+	{
+		id: 3,
+		name: 'KanMind',
+		img: 'img/projects/kanmind.png',
+		detailImg: 'img/projects/kanmind.png',
+		description: {
+			de: 'Kanban-Board zur Team-Organisation. Erstelle Boards, lade Mitglieder ein und verfolge Aufgaben nach Status, Priorität und zuständiger Person.',
+			en: 'Kanban board for team organization. Create boards, invite members and track tasks by status, priority and the person responsible.'
+		},
+		details: {
+			de: 'Ich habe das komplette Backend als REST-API mit Django REST Framework entwickelt. Dazu gehörten die Datenmodellierung für Boards, Aufgaben und Kommentare, eine tokenbasierte Authentifizierung mit Registrierung und Login sowie ein rollenbasiertes Berechtigungssystem, das zwischen Board-Besitzern, Mitgliedern und Task-Erstellern unterscheidet. Das Frontend stammt nicht von mir.',
+			en: 'I built the entire backend as a REST API with Django REST Framework. That covered the data modelling for boards, tasks and comments, token-based authentication with registration and login, and a role-based permission system distinguishing board owners, members and task creators. The frontend is not my work.'
+		},
+		duration: {
+			de: '3 Wochen',
+			en: '3 weeks'
+		},
+		github: 'https://github.com/DanielDev777/KanMind',
+		live: 'https://kanmind.dev-kersten.de/',
+		skills: [
+			{
+				name: 'Python',
+				img: 'img/icons/skills/python.svg'
+			},
+			{
+				name: 'Django',
+				img: 'img/icons/skills/django.svg'
+			},
+			{
+				name: 'REST API',
+				img: 'img/icons/skills/api.png'
+			},
+			{
+				name: 'SQLite',
+				img: 'img/icons/skills/sql.png'
+			}
+		]
+	},
+	{
+		id: 4,
+		name: 'Coderr',
+		img: 'img/projects/coderr.png',
+		detailImg: 'img/projects/coderr.png',
+		description: {
+			de: 'Marktplatz für Freelancer-Dienstleistungen. Anbieter stellen Angebote in mehreren Preisstufen ein, Kunden buchen sie und bewerten die Zusammenarbeit.',
+			en: 'Marketplace for freelance services. Providers publish offers in several pricing tiers, customers order them and review the collaboration afterwards.'
+		},
+		details: {
+			de: 'Ich habe das Backend eigenständig als REST-API mit Django REST Framework umgesetzt. Ich baute getrennte Profile für Business- und Kundenkonten, Angebote mit gestaffelten Preisstufen, die Bestellabwicklung inklusive Statuswechsel sowie ein Bewertungssystem. Zusätzlich habe ich Filter-, Such- und Sortierparameter für die Angebotsliste und Endpunkte für Plattform-Statistiken entwickelt. Das Frontend stammt nicht von mir.',
+			en: 'I implemented the backend on my own as a REST API with Django REST Framework. I built separate profiles for business and customer accounts, offers with tiered pricing, the order flow including status transitions, and a review system. On top of that I added filtering, search and ordering parameters for the offer list plus endpoints for platform statistics. The frontend is not my work.'
+		},
+		duration: {
+			de: '3 Wochen',
+			en: '3 weeks'
+		},
+		github: 'https://github.com/DanielDev777/Coderr',
+		live: 'https://coderr.dev-kersten.de/',
+		skills: [
+			{
+				name: 'Python',
+				img: 'img/icons/skills/python.svg'
+			},
+			{
+				name: 'Django',
+				img: 'img/icons/skills/django.svg'
+			},
+			{
+				name: 'REST API',
+				img: 'img/icons/skills/api.png'
+			},
+			{
+				name: 'SQLite',
+				img: 'img/icons/skills/sql.png'
+			}
+		]
 	}
 ];
