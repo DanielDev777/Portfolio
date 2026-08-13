@@ -33,24 +33,32 @@ export class Skills {
 			src: 'img/icons/skills/angular.png'
 		},
 		{
+			name: 'Vue.js',
+			src: 'img/icons/skills/vue.png'
+		},
+		{
+			name: 'Python',
+			src: 'img/icons/skills/python.svg'
+		},
+		{
+			name: 'Django',
+			src: 'img/icons/skills/django.svg'
+		},
+		{
 			name: 'APIs',
 			src: 'img/icons/skills/api.png'
-		},
-		{
-			name: 'Git',
-			src: 'img/icons/skills/git.png'
-		},
-		{
-			name: 'Docker',
-			src: 'img/icons/skills/docker.png'
 		},
 		{
 			name: 'SQL',
 			src: 'img/icons/skills/sql.png'
 		},
 		{
-			name: 'Vue.js',
-			src: 'img/icons/skills/vue.png'
+			name: 'Docker',
+			src: 'img/icons/skills/docker.png'
+		},
+		{
+			name: 'Git',
+			src: 'img/icons/skills/git.png'
 		}
 	];
 

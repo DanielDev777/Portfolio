@@ -134,6 +134,14 @@ section {
 					filter: grayscale(0);
 					transform: scale(0.8);
 				}
+				// The PNG icons ship with a 4px white ring baked into the artwork.
+				// The SVG ones don't, so we recreate it here to match.
+				&[src$='.svg'] {
+					filter: grayscale(1) vars.$icon-outline;
+					&:hover {
+						filter: grayscale(0) vars.$icon-outline;
+					}
+				}
 			}
 			p {
 				justify-self: flex-end;

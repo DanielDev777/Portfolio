@@ -26,3 +26,8 @@ $radius-half: 50%;
 $radius-pill: 33px;
 $radius-img: 20px;
 // Radius //
+
+// Icons //
+$icon-outline: drop-shadow(3px 0 0 $white) drop-shadow(-3px 0 0 $white)
+	drop-shadow(0 3px 0 $white) drop-shadow(0 -3px 0 $white);
+// Icons //
