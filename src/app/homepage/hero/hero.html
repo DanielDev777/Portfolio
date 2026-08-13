@@ -8,22 +8,19 @@
 				<span class="hero-hello-hover">{{ 'hero.name' | translate }}</span>
 			</button>
 			<h1 class="white">
-				<div class="hero-frontend">
-					@for (char of getCharacters(); track $index) { 
-						@if ($index < 8) {
-							@if ($first) {
-								<span class="hero-uppercase">{{ char }}</span>
-							} @else {
-								<span class="hero-lowercase">{{ char }}</span>
-							}
-						} 
+				<div class="hero-title-top">
+					@for (char of titleTop; track $index) {
+						@if ($first) {
+							<span class="hero-uppercase">{{ char }}</span>
+						} @else {
+							<span class="hero-lowercase">{{ char }}</span>
+						}
 					}
 				</div>
-				<div class="hero-backend">
-					@for (char of getCharacters(); track $index) { @if ($index > 8)
-						{
-							<span class="hero-uppercase">{{ char }}</span>
-					} }
+				<div class="hero-title-bottom">
+					@for (char of titleBottom; track $index) {
+						<span class="hero-uppercase">{{ char }}</span>
+					}
 				</div>
 			</h1>
 			<button class="main-btn roll-animate border-white hover--secondary contact-btn">

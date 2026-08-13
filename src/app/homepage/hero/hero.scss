@@ -62,18 +62,18 @@ section {
 				}
 			}
 		}
-		&-frontend,
-		&-backend {
+		&-title-top,
+		&-title-bottom {
 			width: fit-content;
 			font-size: inherit;
 			span {
 				font-size: inherit;
 			}
 		}
-		&-frontend {
+		&-title-top {
 			align-self: flex-start;
 		}
-		&-backend {
+		&-title-bottom {
 			align-self: flex-end;
 			@media (max-width: 575px) {
 				align-self: flex-start;

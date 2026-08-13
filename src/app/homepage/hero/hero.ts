@@ -9,9 +9,8 @@ import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 })
 export class Hero {
 	translate = inject(TranslateService);
-	
-	getCharacters() {
-		let title = "Frontend Developer";
-		return title.split('');
-	}
+
+	private readonly title = 'Fullstack Developer';
+	readonly titleTop = this.title.split(' ')[0].split('');
+	readonly titleBottom = this.title.split(' ')[1].split('');
 }
