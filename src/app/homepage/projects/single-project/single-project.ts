@@ -1,10 +1,13 @@
 import {
+	afterNextRender,
 	ChangeDetectionStrategy,
 	Component,
-	computed,
+	DestroyRef,
+	ElementRef,
 	inject,
 	input,
-	output
+	output,
+	viewChild
 } from '@angular/core';
 import { PROJECTS_DATA, type Project } from '../projects.data';
 import { Header } from '../../../shared/components/header/header';
@@ -25,6 +28,31 @@ export class SingleProject {
 	projectChanged = output<Project>();
 
 	private translate = inject(TranslateService);
+	private destroyRef = inject(DestroyRef);
+
+	private headline =
+		viewChild.required<ElementRef<HTMLHeadingElement>>('headline');
+
+	constructor() {
+		afterNextRender(() => {
+			const headline = this.headline().nativeElement;
+			const observer = new ResizeObserver(() => this.updateLineCount(headline));
+			observer.observe(headline);
+			this.destroyRef.onDestroy(() => observer.disconnect());
+			document.fonts.ready.then(() => this.updateLineCount(headline));
+			this.updateLineCount(headline);
+		});
+	}
+
+	private updateLineCount(headline: HTMLHeadingElement): void {
+		const range = document.createRange();
+		range.selectNodeContents(headline);
+		const lines = Array.from(range.getClientRects()).filter(
+			(rect) => rect.width > 0
+		).length;
+
+		headline.setAttribute('data-lines', String(lines));
+	}
 
 	selectedLang(): string {
 		return this.translate.getCurrentLang();

@@ -9,7 +9,7 @@
 		</div>
 		<div class="project-modal-content">
 			<div class="project-modal-info">
-				<h2>{{ project().name }}</h2>
+				<h2 #headline>{{ project().name }}</h2>
 				<div class="project-modal-description">
 					<h3>{{ 'projects.description'|translate }}</h3>
 					@if (selectedLang() === 'en') {
@@ -63,12 +63,19 @@
 					</div>
 				}
 				<div class="project-modal-links">
-					<button class="main-btn border-white hover--secondary btn-shadow-white">
-						<a target="_blank" href="{{ project().github }}">{{ 'projects.github'|translate }}</a>
-					</button>
-					<button class="main-btn border-white hover--secondary btn-shadow-white">
-						<a target="_blank" href="{{ project().live }}">{{ 'projects.live'|translate }}</a>
-					</button>
+					@if (project().wip) {
+						<span class="project-modal-wip">{{ 'projects.wip'|translate }}</span>
+					}
+					@if (project().github) {
+						<button class="main-btn border-white hover--secondary btn-shadow-white">
+							<a target="_blank" href="{{ project().github }}">{{ 'projects.github'|translate }}</a>
+						</button>
+					}
+					@if (project().live) {
+						<button class="main-btn border-white hover--secondary btn-shadow-white">
+							<a target="_blank" href="{{ project().live }}">{{ (project().liveLabelKey ?? 'projects.live')|translate }}</a>
+						</button>
+					}
 				</div>
 			</div>
 		</div>

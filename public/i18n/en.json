@@ -46,6 +46,8 @@
 		"duration": "Duration: ",
 		"github": "GitHub",
 		"live": "Live Test",
+		"website": "Visit Website",
+		"wip": "Work in progress",
 		"back": "Go back",
 		"next": "Next Project",
 		"featured": "Featured Project",

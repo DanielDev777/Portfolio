@@ -20,8 +20,10 @@ export interface Project {
 		de: string,
 		en: string
 	};
-	github: string;
-	live: string;
+	github?: string;
+	live?: string;
+	liveLabelKey?: string;
+	wip?: boolean;
 	skills: ProjectSkill[];
 }
 
@@ -205,6 +207,86 @@ export const PROJECTS_DATA: Project[] = [
 			{
 				name: 'SQLite',
 				img: 'img/icons/skills/sql.png'
+			}
+		]
+	},
+	{
+		id: 5,
+		name: 'IT-Service Vitense',
+		img: 'img/projects/it-service.png',
+		detailImg: 'img/projects/it-service.png',
+		description: {
+			de: 'Website für einen selbstständigen IT-Techniker im Raum Hamburg. Leistungsübersicht, Festpreise und Kontaktformular für Besucher, die schnell Hilfe brauchen.',
+			en: 'Website for a self-employed IT technician near Hamburg. Service overview, fixed prices and a contact form for visitors who need help fast.'
+		},
+		details: {
+			de: 'Ich habe die Seite nach geliefertem Design mit Angular umgesetzt und als statisch vorgerenderte Seiten auf einfachem Shared Hosting ausgeliefert, jede Route mit eigenen Meta-Daten. Dazu kamen das responsive Layout, Barrierefreiheit nach WCAG 2.2 AA und die Absicherung des PHP-Kontaktformulars gegen Header-Injection und Spam.',
+			en: 'I implemented the site in Angular from a supplied design and shipped it as statically prerendered pages on plain shared hosting, each route with its own metadata. On top of that came the responsive layout, WCAG 2.2 AA accessibility and hardening the PHP contact form against header injection and spam.'
+		},
+		duration: {
+			de: '10 Tage',
+			en: '10 days'
+		},
+		live: 'https://vitense-it-service.de',
+		liveLabelKey: 'projects.website',
+		skills: [
+			{
+				name: 'Angular',
+				img: 'img/icons/skills/angular.png'
+			},
+			{
+				name: 'TypeScript',
+				img: 'img/icons/skills/typescript.png'
+			},
+			{
+				name: 'SCSS',
+				img: 'img/icons/skills/css.png'
+			},
+			{
+				name: 'HTML',
+				img: 'img/icons/skills/html.png'
+			}
+		]
+	},
+	{
+		id: 6,
+		name: 'DABubble',
+		img: 'img/projects/DABubble.jpg',
+		detailImg: 'img/projects/DABubble.jpg',
+		description: {
+			de: 'Slack-ähnliche Team-Chat-Anwendung mit Kanälen, Threads, Reaktionen und Datei-Anhängen. Nachrichten und Anwesenheit werden in Echtzeit übertragen.',
+			en: 'Slack-style team chat with channels, threads, reactions and file attachments. Messages and presence are delivered in real time.'
+		},
+		details: {
+			de: 'Fullstack-Entwicklung mit Angular und Django REST Framework. Echtzeit-Messaging und Benutzerstatus über WebSockets, sichere JWT-Authentifizierung sowie Google- und Gast-Login implementiert. Channels, Direktnachrichten, Threads, Reaktionen, Datei-Uploads und Suche entwickelt. Die Anwendung mit PostgreSQL und Redis vollständig dockerisiert und das Backend testgetrieben mit umfangreichen automatisierten Tests umgesetzt.',
+			en: 'Full-stack development with Angular and Django REST Framework. Implemented real-time messaging and presence using WebSockets, secure JWT authentication, Google and guest login, channels, direct messages, threads, reactions, file uploads and search. Dockerized the application with PostgreSQL and Redis and developed the backend test-first with extensive automated testing.'
+		},
+		duration: {
+			de: 'laufend seit Juli 2026',
+			en: 'ongoing since July 2026'
+		},
+		github: 'https://github.com/DanielDev777/DABubble',
+		wip: true,
+		skills: [
+			{
+				name: 'Python',
+				img: 'img/icons/skills/python.svg'
+			},
+			{
+				name: 'Django',
+				img: 'img/icons/skills/django.svg'
+			},
+			{
+				name: 'REST API',
+				img: 'img/icons/skills/api.png'
+			},
+			{
+				name: 'PostgreSQL',
+				img: 'img/icons/skills/sql.png'
+			},
+			{
+				name: 'Docker',
+				img: 'img/icons/skills/docker.png'
 			}
 		]
 	}

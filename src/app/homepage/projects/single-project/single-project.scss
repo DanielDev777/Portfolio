@@ -43,7 +43,7 @@
 		}
 	}
 	&-breadcrumbs {
-		padding: vars.$spacing-lg vars.$spacing-md 0;
+		padding-top: vars.$spacing-lg;
 		@media (max-width: 991px) {
 			padding: vars.$spacing-md 0;
 			order: 1;
@@ -73,6 +73,12 @@
 			}
 			&::before {
 				background-image: url('../../../../../public/img/icons/about-me/about-line.png');
+			}
+			&[data-lines='2']::before {
+				background-position: left 70%;
+			}
+			&[data-lines='3']::before {
+				background-position: left 75%;
 			}
 		}
 	}
@@ -127,10 +133,21 @@
 			}
 		}
 	}
+	&-wip {
+		padding: 12px 18px;
+		border: 1px dashed vars.$white;
+		border-radius: vars.$radius-pill;
+		color: vars.$white;
+		white-space: nowrap;
+		@media (max-width: 991px) and (min-width: 576px) {
+			border-color: #000;
+			color: #000;
+		}
+	}
 	&-switch {
 		width: 100%;
 		@include mixins.flexBox($jc: flex-end);
-		padding: 0 vars.$spacing-xxl;
+		padding: 0 vars.$spacing-xxl vars.$spacing-md 0;
 		@media (max-width: 991px) {
 			position: absolute;
 			width: fit-content;
