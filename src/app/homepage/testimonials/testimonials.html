@@ -26,10 +26,12 @@
 									<p class="review-name">{{ review.name }}</p>
 									<p class="review-title">{{ review.title }}</p>
 								</div>
-								<a href="{{ review.link }}">
-									<img src="img/icons/testimonials/linkedin.svg">
-									{{ 'testimonials.profile'|translate }}
-								</a>
+								@if (review.link) {
+									<a href="{{ review.link }}">
+										<img src="img/icons/testimonials/linkedin.svg">
+										{{ 'testimonials.profile'|translate }}
+									</a>
+								}
 							</div>
 						</div>
 					</div>

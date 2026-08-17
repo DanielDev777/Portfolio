@@ -16,31 +16,31 @@ export class Testimonials {
 	
 	testimonials = [
 		{
-			name: "Tobias Lange",
+			name: "Dr. Daniela Schomaker",
 			title: "Frontend Developer",
 			text: {
-				de: "Karl really kept the team together with his great organization and clear communication. We wouldn't have got this far without his commitment.",
-				en: "Karl really kept the team together with his great organization and clear communication. We wouldn't have got this far without his commitment."
+				de: "Ich hatte das große Glück, mit Daniel an einem Projekt der Developer Akademie zusammenzuarbeiten. Dank seiner langjährigen Erfahrung in der Frontend-Entwicklung, seiner Hilfsbereitschaft und seinen klaren Erklärungen hat er unser Projekt entscheidend vorangebracht. Ein absoluter Gewinn für jedes Team.",
+				en: "I was very fortunate to work with Daniel on a Developer Akademie project. Thanks to his many years of experience in frontend development, his willingness to help and his clear explanations, he moved our project forward decisively. An absolute asset to any team."
 			},
 			link: ""
 		},
 		{
-			name: "Maria Schäfer",
+			name: "Christian Hajduk",
 			title: "Frontend Developer",
 			text: {
-				de: "It was a great pleasure to work with Karl. He knows how to push and encourage team members to present the best work possible, always adding something to brainstorm. Regarding the well-being of group members, he was always present and available to listen and help others, with a great sense of humor as well.",
-				en: "It was a great pleasure to work with Karl. He knows how to push and encourage team members to present the best work possible, always adding something to brainstorm. Regarding the well-being of group members, he was always present and available to listen and help others, with a great sense of humor as well."
+				de: "Daniel war dank seiner großen Erfahrung und der direkten, zielorientierten Umsetzung von Aufgaben eine enorme Bereicherung für unser „Join“-Projekt. Besonders wertvoll waren seine fundierten Lösungsansätze und die Fähigkeit, sein Wissen so transparent zu teilen, dass das gesamte Team fachlich enorm von ihm lernen konnte. Ich schätze ihn als hochprofessionellen Kollegen und bin sehr dankbar für die hervorragende Zusammenarbeit",
+				en: "Thanks to his extensive experience and his direct, goal-oriented way of implementing tasks, Daniel was an enormous asset to our “Join” project. His well-founded approaches to solutions were particularly valuable, as was his ability to share his knowledge so transparently that the whole team could learn a great deal from him professionally. I value him as a highly professional colleague and am very grateful for the excellent collaboration"
 			},
-			link: ""
+			link: "https://www.linkedin.com/in/christian-hajduk/"
 		},
 		{
-			name: "David Braun",
-			title: "Frontend Developer",
+			name: "Quoc Nam Tran",
+			title: "Fullstack Developer",
 			text: {
-				de: "Karl was a top team colleague at DA. His positive commitment and willingness to take on responsibility made a significant contribution to us achieving our goals.",
-				en: "Karl was a top team colleague at DA. His positive commitment and willingness to take on responsibility made a significant contribution to us achieving our goals."
+				de: "Es hat mich sehr gefreut, mit Daniel gearbeitet zu haben, da er mit seinen Vorkenntnissen, seinem Workflow und seinem fundierten Wissen im Frontend die Bearbeitung des Join-Projekts stark beschleunigt hat. Auch seine offene und hilfsbereite Art hat dazu beigetragen, für Probleme im Projekt schnellstmöglich passende Lösungen zu finden.",
+				en: "I was very glad to have worked with Daniel, as his prior knowledge, his workflow and his sound frontend expertise greatly sped up our work on the Join project. His open and helpful manner also helped us find fitting solutions to problems in the project as quickly as possible."
 			},
-			link: ""
+			link: "https://www.linkedin.com/in/tranqn/"
 		},
 	]
 }

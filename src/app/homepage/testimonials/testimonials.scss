@@ -92,7 +92,7 @@
 		position: absolute;
 		top: 0;
 		left: 0;
-		padding: vars.$spacing-lg vars.$spacing-mdg;
+		padding: vars.$spacing-mdg;
 		width: 100%;
 		height: 100%;
 		@include mixins.flexBox($fd: column, $jc: space-between);
