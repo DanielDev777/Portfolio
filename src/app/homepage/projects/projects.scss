@@ -47,7 +47,7 @@ section {
 }
 
 .project {
-	&:not(:last-of-type, :nth-of-type(7)) {
+	&:not(:last-of-type, :nth-of-type(9)) {
 		margin-bottom: 5rem;
 	}
 	@include mixins.flexBox($fd: column, $ai: flex-start, $g: vars.$spacing-sm);

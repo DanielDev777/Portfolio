@@ -289,5 +289,89 @@ export const PROJECTS_DATA: Project[] = [
 				img: 'img/icons/skills/docker.png'
 			}
 		]
+	},
+	{
+		id: 7,
+		name: 'Nerdic',
+		img: 'img/projects/nerdic.png',
+		detailImg: 'img/projects/nerdic.png',
+		description: {
+			de: 'Eine individuelle WordPress-Website zur Präsentation des Unternehmens, seiner Leistungen und Markenidentität in einem modernen und visuell einheitlichen Webauftritt.',
+			en: 'A custom WordPress website created to present the company, its services and brand identity through a modern and visually consistent web presence.'
+		},
+		details: {
+			de: 'WordPress-Entwicklung in enger Zusammenarbeit mit der Grafikerin des Unternehmens. Einrichtung und Anpassung des WordPress-Themes, Umsetzung von Frontend-Layouts und Styling sowie gezielte Änderungen und Erweiterungen am Theme-Code zur Umsetzung des Designs.',
+			en: "WordPress development in close collaboration with the company's graphic designer. Set up and customized the WordPress theme, implemented frontend layouts and styling, and made targeted theme code adjustments and extensions to match the provided design."
+		},
+		duration: {
+			de: '2 Wochen',
+			en: '2 weeks'
+		},
+		live: 'https://nerdic.org',
+		liveLabelKey: 'projects.website',
+		skills: [
+			{
+				name: 'WordPress',
+				img: 'img/icons/skills/wordpress.svg'
+			},
+			{
+				name: 'PHP',
+				img: 'img/icons/skills/php.svg'
+			},
+			{
+				name: 'HTML',
+				img: 'img/icons/skills/html.png'
+			},
+			{
+				name: 'CSS/SCSS',
+				img: 'img/icons/skills/css.png'
+			},
+			{
+				name: 'JavaScript',
+				img: 'img/icons/skills/javascript.png'
+			}
+		]
+	},
+	{
+		id: 8,
+		name: 'Barista Lounge',
+		img: 'img/projects/barista-lounge.png',
+		detailImg: 'img/projects/barista-lounge.png',
+		description: {
+			de: 'Ein Shopify-basierter Onlineshop für Specialty Coffee, Kaffeezubehör und Equipment mit einem modernen und produktorientierten Einkaufserlebnis.',
+			en: 'A Shopify-based online store for specialty coffee, coffee equipment and accessories with a modern and product-focused shopping experience.'
+		},
+		details: {
+			de: 'Frontend-Entwicklung und Unterstützung innerhalb eines bestehenden Shopify-Projekts. Unterstützung des leitenden Entwicklers bei der Umsetzung und Optimierung von Storefront-Komponenten, Layouts und responsivem Styling mit Fokus auf eine konsistente User Experience.',
+			en: 'Frontend development and support within an existing Shopify project. Assisted the lead developer with implementing and refining storefront components, layouts and responsive styling while ensuring a consistent user experience across the shop.'
+		},
+		duration: {
+			de: '4 Wochen',
+			en: '4 weeks'
+		},
+		live: 'https://barista-lounge.com',
+		liveLabelKey: 'projects.website',
+		skills: [
+			{
+				name: 'Shopify',
+				img: 'img/icons/skills/shopify.svg'
+			},
+			{
+				name: 'Liquid',
+				img: 'img/icons/skills/liquid.svg'
+			},
+			{
+				name: 'HTML',
+				img: 'img/icons/skills/html.png'
+			},
+			{
+				name: 'CSS/SCSS',
+				img: 'img/icons/skills/css.png'
+			},
+			{
+				name: 'JavaScript',
+				img: 'img/icons/skills/javascript.png'
+			}
+		]
 	}
 ];
