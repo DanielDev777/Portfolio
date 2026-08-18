@@ -28,8 +28,8 @@ export class Testimonials {
 			name: "Christian Hajduk",
 			title: "Frontend Developer",
 			text: {
-				de: "Daniel war dank seiner großen Erfahrung und der direkten, zielorientierten Umsetzung von Aufgaben eine enorme Bereicherung für unser „Join“-Projekt. Besonders wertvoll waren seine fundierten Lösungsansätze und die Fähigkeit, sein Wissen so transparent zu teilen, dass das gesamte Team fachlich enorm von ihm lernen konnte. Ich schätze ihn als hochprofessionellen Kollegen und bin sehr dankbar für die hervorragende Zusammenarbeit",
-				en: "Thanks to his extensive experience and his direct, goal-oriented way of implementing tasks, Daniel was an enormous asset to our “Join” project. His well-founded approaches to solutions were particularly valuable, as was his ability to share his knowledge so transparently that the whole team could learn a great deal from him professionally. I value him as a highly professional colleague and am very grateful for the excellent collaboration"
+				de: "Daniel war dank seiner großen Erfahrung und der direkten, zielorientierten Umsetzung von Aufgaben eine enorme Bereicherung für unser „Join“-Projekt. Besonders wertvoll waren seine fundierten Lösungsansätze und die Fähigkeit, sein Wissen so transparent zu teilen, dass das gesamte Team fachlich enorm von ihm lernen konnte. Ich schätze ihn als hochprofessionellen Kollegen und bin sehr dankbar für die hervorragende Zusammenarbeit.",
+				en: "Thanks to his extensive experience and his direct, goal-oriented way of implementing tasks, Daniel was an enormous asset to our “Join” project. His well-founded approaches to solutions were particularly valuable, as was his ability to share his knowledge so transparently that the whole team could learn a great deal from him professionally. I value him as a highly professional colleague and am very grateful for the excellent collaboration."
 			},
 			link: "https://www.linkedin.com/in/christian-hajduk/"
 		},
