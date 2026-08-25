@@ -349,8 +349,6 @@ export const PROJECTS_DATA: Project[] = [
 			de: '4 Wochen',
 			en: '4 weeks'
 		},
-		live: 'https://barista-lounge.com',
-		liveLabelKey: 'projects.website',
 		skills: [
 			{
 				name: 'Shopify',
